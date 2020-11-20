@@ -1,3 +1,4 @@
-document.querySelector(".more").addEventListener("click",function(){
-  alert("Sorry, currently there are  no other projects.");
-});
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
