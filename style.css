@@ -7,7 +7,7 @@ body{
   position: fixed;
   width: 100%;
   height: 100%;
-  background: #ffff url("https://media.giphy.com/media/MDrmyLuEV8XFOe7lU6/giphy.gif") no-repeat center ;
+  background: #ffff url("images/onload.gif") no-repeat center ;
   z-index: 99999;
 
 }
