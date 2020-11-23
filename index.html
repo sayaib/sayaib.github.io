@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>Sayaib Sarkar</title>
 
-
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
@@ -54,6 +54,8 @@
 
 
       <!-- Home Screen Page -->
+<div data-aos="fade-down" data-aos-duration="1000"">
+
 
       <div class="row">
         <div class="col-lg-6">
@@ -67,6 +69,7 @@
           <img class="title-img" src="images/sayaib.png" alt="sayaib-img">
 
         </div>
+      </div>
       </div>
     </div>
 
@@ -102,8 +105,8 @@
     <h1 class="work-heading">Some Things I've Built</h1>
 
     <div class="row">
-      <div class="col-lg-4 banner">
-        <div class="banner-body">
+      <div class="col-lg-4 banner data-aos="fade-in" data-aos-duration="4000"">
+        <div class="banner-body data-aos="fade-in" data-aos-duration="4000"">
           <i class="fa fa-folder-o fa-4x folder" aria-hidden="true"></i>
           <a href="https://github.com/sayaib/csc" target="blank" class="card-link"><i class="fa fa-github fa-2x link" aria-hidden="true"></i></a>
           <a href="https://sayaib.github.io/csc/" target="blank" class="card-link"><i class="fa fa-external-link fa-2x link" aria-hidden="true"></i></a>
@@ -207,6 +210,10 @@
 
 
   <script src="index.js" charset="utf-8"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+   AOS.init();
+  </script>
 </body>
 
 </html>
