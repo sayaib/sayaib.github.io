@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
 body{
   margin: 0;
   padding: 0;
@@ -36,7 +38,7 @@ h4{
 padding-bottom: 1.5rem;
 }
 .navbar{
-  padding-bottom: 5rem;
+  padding-bottom: 4rem;
 }
 .navbar-toggler{
   background-image: url('images/menu.png');
@@ -51,6 +53,11 @@ padding-bottom: 1.5rem;
 }
 .col-lg-6{
   padding:50px;
+}
+
+#time{
+  font-family: 'Satisfy', cursive;
+  font-size: 2rem;
 }
 
 
