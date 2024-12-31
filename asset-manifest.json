@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6fe3113b.css",
+    "main.js": "/static/js/main.89591cfc.js",
+    "static/media/installation.gif": "/static/media/installation.a0bfae98c12ce50b4542.gif",
+    "static/media/customsnip.gif": "/static/media/customsnip.5ff7a0ea80b25b7bde1f.gif",
+    "static/media/fh-huquq.png": "/static/media/fh-huquq.2c657446a66a66a4d556.png",
+    "static/media/viewcustom.gif": "/static/media/viewcustom.9018d90c70ce0fc21c9e.gif",
+    "static/media/reservation-form.png": "/static/media/reservation-form.832532681ceb32753760.png",
+    "static/media/Educational Website.jpg": "/static/media/Educational Website.97050bafaa509873a210.jpg",
+    "static/media/Project4.jpg": "/static/media/Project4.8de82fea50154dddbe24.jpg",
+    "static/media/Startup Agency Project.jpg": "/static/media/Startup Agency Project.dcb42126ea6ff853c8f3.jpg",
+    "static/media/logo.png": "/static/media/logo.ac7c0d41d816a21fb52c.png",
+    "static/media/Jokes Project.jpg": "/static/media/Jokes Project.133f44f42c2b6b0c1781.jpg",
+    "static/media/3_1_light.png": "/static/media/3_1_light.993e635692f16e10a599.png",
+    "static/media/3_1_dark.png": "/static/media/3_1_dark.c3aab517081feb591898.png",
+    "static/media/3_light.png": "/static/media/3_light.76727ffe085db633f9d6.png",
+    "static/media/3_dark.png": "/static/media/3_dark.a2a15408cef8f5864127.png",
+    "static/media/me.jpg": "/static/media/me.8f6b0cf668a387fc7629.jpg",
+    "static/media/nav.png": "/static/media/nav.aaf972bd90ac68771320.png",
+    "static/media/under-developemrnt.png": "/static/media/under-developemrnt.5d952b645db4339fe1de.png",
+    "static/media/folder.png": "/static/media/folder.40b6d80b92c704961c99.png",
+    "index.html": "/index.html",
+    "main.6fe3113b.css.map": "/static/css/main.6fe3113b.css.map",
+    "main.89591cfc.js.map": "/static/js/main.89591cfc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6fe3113b.css",
+    "static/js/main.89591cfc.js"
+  ]
+}
