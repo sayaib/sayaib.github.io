@@ -1,0 +1,90 @@
+.snippets-container {
+  width: 100%;
+  max-height: 100vh;
+  overflow-y: auto;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.snippets-card {
+  /* background-color: #2a2b52; */
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.snippets-header {
+  padding: 1.5rem;
+}
+
+.snippets-title {
+  font-size: 1.575rem;
+  font-weight: bold;
+  text-align: center;
+  color: #f7df1e;
+}
+
+.snippets-content {
+  padding: 0.5rem;
+}
+
+.table-container {
+  border-radius: 0.5rem;
+  border: 1px solid #4a4b6a;
+  overflow-x: auto;
+}
+
+.snippets-table {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: small;
+}
+
+.snippets-table th,
+.snippets-table td {
+  padding: 0.75rem;
+  text-align: center;
+  text-align: left;
+}
+
+.snippets-table th {
+  background-color: #1e1f3b;
+  color: #f7df1e;
+  font-weight: 500;
+  text-align: center;
+}
+
+.snippets-table td {
+  color: #e5e5e5;
+  text-align: center;
+}
+
+.snippets-table tbody tr:hover {
+  background-color: #1e1f3b;
+  transition: background-color 0.2s ease;
+}
+
+.no-data-message {
+  color: #ffffff;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .snippets-title {
+    font-size: 1rem;
+  }
+
+  .snippets-table th,
+  .snippets-table td {
+    padding: 0.5rem;
+  }
+  .snippets-content {
+    margin: 0.5rem;
+  }
+}

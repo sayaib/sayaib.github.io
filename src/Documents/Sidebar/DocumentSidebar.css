@@ -1,0 +1,104 @@
+:root {
+  /* Light mode variables */
+  --sidebar-bg-color: white;
+  --sidebar-text-color: #333;
+  --sidebar-item-color: #555;
+  --sidebar-item-hover-color: #0073e6;
+  --sidebar-heading-color: #333;
+  --sidebar-border-color: #ddd;
+  --active-link-color: blue;
+  --sidebar-section-heading-color: #215e58;
+}
+
+[data-theme="dark"] {
+  /* Dark mode variables */
+  --sidebar-bg-color: #060b10;
+  --sidebar-text-color: #e0e0e0;
+  --sidebar-item-color: #bdbdbd;
+  --sidebar-item-hover-color: #64b5f6;
+  --sidebar-heading-color: #e0e0e0;
+  --sidebar-border-color: #333;
+  --active-link-color: #64b5f6;
+  --sidebar-section-heading-color: #40aca1;
+}
+
+/* Sidebar container */
+
+.sidebar_section_heading {
+  display: flex;
+  align-items: center;
+  color: var(--sidebar-section-heading-color) !important;
+}
+
+.sidebar-section_doc {
+  margin-left: 1rem;
+  position: fixed;
+  width: 220px;
+  height: 100%;
+  padding-bottom: 60px;
+  overflow-y: scroll;
+  font-family: Arial, sans-serif;
+  background-color: var(--sidebar-bg-color);
+  color: var(--sidebar-text-color);
+}
+
+/* Sidebar sections */
+.sidebar-section {
+  margin-bottom: 20px;
+}
+
+/* Section headings */
+.sidebar-section h6 {
+  font-size: 14px;
+  color: var(--sidebar-heading-color);
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* List items */
+.sidebar-section ul {
+  padding-left: 10px;
+  list-style-type: none;
+}
+
+.sidebar-section ul li {
+  font-size: 13px;
+  color: var(--sidebar-item-color);
+  margin-bottom: 6px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect on list items */
+.sidebar-section ul li:hover {
+  color: var(--sidebar-item-hover-color);
+}
+
+/* Optional: Make sections collapsible */
+.sidebar-section ul li.collapsed {
+  display: none;
+}
+
+/* Responsive layout for small screens */
+@media (max-width: 768px) {
+  .sidebar-section_doc {
+    width: 94vw;
+    padding: 15px 15px 60px 15px;
+  }
+}
+
+/* Default style for nav links */
+.nav-link {
+  color: var(--sidebar-text-color);
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Active link style */
+.active-link {
+  color: var(--active-link-color);
+}

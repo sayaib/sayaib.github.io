@@ -1,0 +1,72 @@
+{
+  "Router: Routes template": {
+    "prefix": "rrnr",
+    "description": "Router: Routes template",
+    "body": "import React from 'react';\nimport { Route, IndexRoute, Redirect } from 'react-router';\n\nimport App from './App';\nimport MainView from 'components/MainView';\nimport NotFoundView from 'components/NotFound';\n\nexport default (\n  <Route path=\"/\" component={App}>\n    <IndexRoute component={MainView} />\n    <Route path=\"404\" component={NotFoundView} />\n    <Redirect from=\"*\" to=\"404\" />\n  </Route>\n);"
+  },
+  "Router: Render a Route": {
+    "prefix": "rrrr",
+    "description": "Router: Render a Route",
+    "body": "import { render } from 'react-dom';\nimport { Router } from 'react-router';\nimport { browserHistory } from 'react-router';\n\nimport routes from './routes';\n\nrender(\n  <Router history={browserHistory} routes={routes} />, document.getElementById('app')\n);"
+  },
+  "Router: Navigate with Link": {
+    "prefix": "rrl",
+    "description": "Router: Navigate with Link",
+    "body": "<Link to=\"/${1:route}\">${2:Title}</Link>"
+  },
+  "Router: Active Link": {
+    "prefix": "rral",
+    "description": "Router: Active Link",
+    "body": "<Link to=\"/${1:about}\" activeClassName=\"${2:active}\">${3:About}</Link>"
+  },
+  "Router: Index Link": {
+    "prefix": "rril",
+    "description": "Router: Index Link",
+    "body": "<IndexLink to=\"/\" activeClassName=\"${1:active}\">${2:Home}</IndexLink>"
+  },
+  "Router: Index Link Alternative": {
+    "prefix": "rrila",
+    "description": "Router: Index Link w/ `onlyActiveOnIndex` property",
+    "body": "<Link to=\"/\" activeClassName=\"${1:active}\" onlyActiveOnIndex={true}>${2:Home}</Link>"
+  },
+  "Router: Include router context types": {
+    "prefix": "rrct",
+    "description": "Router: Include router context types",
+    "body": "static contextTypes = {\n  router: PropTypes.object.isRequired\n};"
+  },
+  "Router: Nav Link wrapper": {
+    "prefix": "rrnlw",
+    "description": "Router: Navigation Link wrapper",
+    "body": "import React, { Component } from 'react';\nimport { Link } from 'react-router';\n\nexport default class NavLink extends Component {\n  render() {\n    return <Link {...this.props} activeClassName=\"${1:active}\" />;\n  }\n}"
+  },
+  "Router: Nav Link": {
+    "prefix": "rrnl",
+    "description": "Router: Navigation Link",
+    "body": "<NavLink to=\"/${1:route}\">${2:Title}</NavLink>"
+  },
+  "Router: URL params": {
+    "prefix": "rrup",
+    "description": "Router: Get URL params",
+    "body": "this.props.params.${1:name}"
+  },
+  "Router: Navigate programatically": {
+    "prefix": "rrpu",
+    "description": "Router: Navigate programatically",
+    "body": "this.context.router.push('/${1:route}');"
+  },
+  "Router Routes: Index route": {
+    "prefix": "rrir",
+    "description": "Router Routes: Index route",
+    "body": "<IndexRoute component=${1:Main} />"
+  },
+  "Router Routes: Regular route": {
+    "prefix": "rrregr",
+    "description": "Router Routes: Regular route",
+    "body": "<Route path=\"${1:name}\" component=${2:Component} />"
+  },
+  "Router Routes: Redirect": {
+    "prefix": "rrred",
+    "description": "Router Routes: Redirect",
+    "body": "<Redirect from=\"${1:/route/:id}\" to=\"${2:/another/:id}\" />"
+  }
+}

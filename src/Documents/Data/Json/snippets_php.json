@@ -1,0 +1,37 @@
+{
+  "Echo String": {
+    "prefix": "echostr",
+    "body": [
+      "echo '<span style=\"color: blue;\">'.${1:'your_string'}.'</span>';"
+    ],
+    "description": "Echo a string with blue color"
+  },
+  "Echo Number": {
+    "prefix": "echonum",
+    "body": [
+      "echo '<span style=\"color: green;\">'.${1:your_number}.'</span>';"
+    ],
+    "description": "Echo a number with green color"
+  },
+  "Echo Variable": {
+    "prefix": "echovar",
+    "body": [
+      "echo '<span style=\"color: orange;\">'.${1:your_variable}.'</span>';"
+    ],
+    "description": "Echo a variable with orange color"
+  },
+  "Echo Array": {
+    "prefix": "echoarr",
+    "body": [
+      "echo '<span style=\"color: purple;\">'.print_r(${1:your_array}, true).'</span>';"
+    ],
+    "description": "Echo an array with purple color"
+  },
+  "Echo Boolean": {
+    "prefix": "echobool",
+    "body": [
+      "echo '<span style=\"color: red;\">'.(${1:your_boolean} ? 'true' : 'false').'</span>';"
+    ],
+    "description": "Echo a boolean with red color"
+  }
+}

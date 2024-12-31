@@ -1,0 +1,475 @@
+{
+  "import": {
+    "prefix": "imp",
+    "body": "import ${2:moduleName} from '${1:module}'$0"
+  },
+  "importNoModuleName": {
+    "prefix": "imn",
+    "body": "import '${1:module}'$0"
+  },
+  "importDestructing": {
+    "prefix": "imd",
+    "body": "import { $2 } from '${1:module}'$0"
+  },
+  "importEverything": {
+    "prefix": "ime",
+    "body": "import * as ${2:alias} from '${1:module}'$0"
+  },
+  "importAs": {
+    "prefix": "ima",
+    "body": "import { ${2:originalName} as ${3:alias} } from '${1:module}'$0"
+  },
+  "exportDefault": {
+    "prefix": "exp",
+    "body": "export default $1$0"
+  },
+  "exportDestructing": {
+    "prefix": "exd",
+    "body": "export { $2 } from '${1:module}'$0"
+  },
+  "exportAs": {
+    "prefix": "exa",
+    "body": "export { ${2:originalName} as ${3:alias} } from '${1:module}'$0"
+  },
+  "exportNamedFunction": {
+    "prefix": "enf",
+    "body": [
+      "export const ${1:functionName} = (${2:params}) => {",
+      "\t$0",
+      "}",
+      ""
+    ],
+    "description": "Export named function in ES7 syntax"
+  },
+  "exportDefaultFunction": {
+    "prefix": "edf",
+    "body": ["export default (${1:params}) => {", "\t$0", "}", ""],
+    "description": "Export default function in ES7 syntax"
+  },
+  "met": {
+    "prefix": "met",
+    "body": ["${1:methodName} = (${2:params}) => {", "\t${0}", "}", ""],
+    "description": "Creates a method inside a class in ES7 syntax"
+  },
+  "method": {
+    "prefix": "method",
+    "body": ["${1:methodName}(${2:params}) {$3};"],
+    "description": "method"
+  },
+  "forEach": {
+    "prefix": "fre",
+    "body": ["${1:array}.forEach(${2:currentItem} => {", "\t${0}", "})", ""],
+    "description": "Creates a forEach statement in ES7 syntax"
+  },
+  "forOf": {
+    "prefix": "fof",
+    "body": ["for(let ${1:item} of ${2:object}) {", "\t${0}", "}", ""],
+    "description": "Iterating over property names of iterable objects"
+  },
+  "forIn": {
+    "prefix": "fin",
+    "body": ["for(let ${1:item} in ${2:object}) {", "\t${0}", "}", ""],
+    "description": "Iterating over property values of iterable objects"
+  },
+  "anonymousFunction": {
+    "prefix": "anfn",
+    "body": ["(${1:params}) => {", "\t${2}", "}", ""],
+    "description": "Creates an anonymous function in ES7 syntax"
+  },
+  "namedFunction": {
+    "prefix": "nfn",
+    "body": ["const ${1:name} = (${2:params}) => {", "\t${3}", "}", ""],
+    "description": "Creates a named function in ES7 syntax"
+  },
+  "destructingObject": {
+    "prefix": "dob",
+    "body": "const {${1:propertyName}} = ${2:objectToDestruct}",
+    "description": "Creates and assigns a local variable using object destructing"
+  },
+  "destructingArray": {
+    "prefix": "dar",
+    "body": "const [${1:propertyName}] = ${2:arrayToDestruct}",
+    "description": "Creates and assigns a local variable using array destructing"
+  },
+  "setInterval": {
+    "prefix": "sti",
+    "body": ["setInterval(() => {", "\t${2}", "}, ${0:intervalInms})", ""],
+    "description": "Executes the given function at specified intervals in ES7 syntax"
+  },
+  "setTimeOut": {
+    "prefix": "sto",
+    "body": ["setTimeout(() => {", "\t${2}", "}, ${1:delayInms})", ""],
+    "description": "Executes the given function after the specified delay in ES7 syntax"
+  },
+  "promise": {
+    "prefix": "prom",
+    "body": ["return new Promise((resolve, reject) => {", "\t${1}", "})", ""],
+    "description": "Creates and returns a new Promise in the standard ES7 syntax"
+  },
+  "consoleAssert": {
+    "prefix": "cas",
+    "body": "console.assert(${1:expression}, ${2:object})",
+    "description": "If the specified expression is false, the message is written to the console along with a stack trace"
+  },
+  "consoleClear": {
+    "prefix": "ccl",
+    "body": "console.clear()",
+    "description": "Clears the console"
+  },
+  "consoleCount": {
+    "prefix": "cco",
+    "body": "console.count(${1:label})",
+    "description": "Writes the the number of times that count() has been invoked at the same line and with the same label"
+  },
+  "consoleDir": {
+    "prefix": "cdi",
+    "body": "console.dir(${1:object})",
+    "description": "Prints a JavaScript representation of the specified object"
+  },
+  "consoleError": {
+    "prefix": "cer",
+    "body": "console.error(${1:object})",
+    "description": "Displays a message in the console and also includes a stack trace from where the method was called"
+  },
+  "consoleGroup": {
+    "prefix": "cgr",
+    "body": "console.group(\"${1:label}\")",
+    "description": "Groups and indents all following output by an additional level, until console.groupEnd() is called."
+  },
+  "consoleGroupEnd": {
+    "prefix": "cge",
+    "body": "console.groupEnd()",
+    "description": "Closes out the corresponding console.group()."
+  },
+  "consoleLog": {
+    "prefix": "clg",
+    "body": "console.log(${1:object})",
+    "description": "Displays a message in the console"
+  },
+  "consoleTrace": {
+    "prefix": "ctr",
+    "body": "console.trace(${1:object})",
+    "description": "Prints a stack trace from the point where the method was called"
+  },
+  "consoleLogObject": {
+    "prefix": "clo",
+    "body": "console.log('${1:object}', ${1:object})",
+    "description": "Logs property with name."
+  },
+  "consoleTime": {
+    "prefix": "ctm",
+    "body": "console.time('${1:object}')",
+    "description": "Console time wrapper"
+  },
+  "consoleTimeEnd": {
+    "prefix": "cte",
+    "body": "console.timeEnd('${1:object}')",
+    "description": "Console time end wrapper"
+  },
+  "consoleWarn": {
+    "prefix": "cwa",
+    "body": "console.warn(${1:object})",
+    "description": "Displays a message in the console but also displays a yellow warning icon along with the logged message"
+  },
+  "consoleInfo": {
+    "prefix": "cin",
+    "body": "console.info(${1:object})",
+    "description": "Displays a message in the console but also displays a blue information icon along with the logged message"
+  },
+  "destructProps": {
+    "prefix": "cp",
+    "body": ["const { $1 } = this.props"],
+    "description": "Creates and assigns a local variable using props destructing"
+  },
+  "constructor": {
+    "prefix": "constructor",
+    "body": ["constructor() {$1};"],
+    "description": "constructor"
+  },
+  "thenCatch": {
+    "prefix": "thenc",
+    "body": ".then((${1:result}) => {\n\t${2}\n}).catch((${3:err}) => {\n\t${4}\n});",
+    "description": "Add the .then and .catch methods to handle promises"
+  },
+  "asyncMethod": {
+    "prefix": "amet",
+    "body": [" async ${1:method}(${2:params}) {", "  $3", "}"],
+    "description": "Creates an async method"
+  },
+  "create-promise": {
+    "prefix": "cpro",
+    "body": [
+      "new Promise((resolve, reject) => {",
+      "  let condition = false;",
+      "  if(condition) {",
+      "    resolve('data')",
+      "  } else {",
+      "    reject('error')",
+      "}",
+      "})"
+    ],
+    "description": "Create a promise."
+  },
+  "createServerExpressStructured": {
+    "prefix": "cfne",
+    "body": [
+      "const express = require('express');",
+      "",
+      "const ${1:server} = express();",
+      "",
+      "${1:server}.use(express.json());",
+      "",
+      "const PORT = 3000;",
+      "",
+      "${1:server}.get('/', (request, response) => json({message: 'Hello World!'}));",
+      "",
+      "${1:server}.listen(PORT);"
+    ],
+    "description": "Creates a basic express file"
+  },
+  "createFileRoutes.js": {
+    "prefix": "fgr",
+    "body": [
+      "import { Router } from 'express';",
+      "",
+      "const ${1:routes} = new Router();",
+      "$2",
+      "",
+      "export default ${1:routes};"
+    ],
+    "description": "Creates routes.js"
+  },
+  "genereteRouterFileDestruct": {
+    "prefix": "fgrd",
+    "body": [
+      "import { Router } from 'express';",
+      "",
+      "const routes = Router();",
+      "",
+      "export { routes };"
+    ],
+    "description": "genereteRouterFileDestruct"
+  },
+  "createIndexRoute": {
+    "prefix": "igr",
+    "body": [
+      "${1:app}.${2:get}('/${3:rotas}', (request, response) => {",
+      "  response.json({});",
+      "});"
+    ],
+    "description": "create an index route."
+  },
+  "createIndexRouteMiddleware": {
+    "prefix": "igrm",
+    "body": [
+      "${1:app}.${2:get}('/${3:rotas}', [${4:middleware}] , (request, response) => {",
+      "  response.json({});",
+      "});"
+    ],
+    "description": "create an index route with middleware."
+  },
+  "createIndexRouteWitdhParams": {
+    "prefix": "igrp",
+    "body": [
+      "${1:app}.${2:get}('/${3:rotas}/:${4:id}', (request, response) => {",
+      "  response.json({});",
+      "});"
+    ],
+    "description": "creates an index parameterized route."
+  },
+  "createIndexRouteWitdhParamsMiddwares": {
+    "prefix": "igrpm",
+    "body": [
+      "${1:app}.${2:get}('/${3:rotas}/:${5:id}', [${4:middleware}], (request, response) => {",
+      "  response.json({});",
+      "});"
+    ],
+    "description": "create an index route with parameter and middleware"
+  },
+  "createRoute": {
+    "prefix": "gr",
+    "body": [
+      "${1:routes}.${2:get}('/${3:rotas}', ${4:Rota}Controller.${5:index});",
+      ""
+    ],
+    "description": "creates route"
+  },
+  "createRouteMiddlewares": {
+    "prefix": "grm",
+    "body": [
+      "${1:routes}.${2:get}('/${3:rotas}', [${4:middlewares}], ${5:Rota}Controller.${6:index});",
+      ""
+    ],
+    "description": "creates route with Middlewares"
+  },
+  "createRouteParams": {
+    "prefix": "grp",
+    "body": [
+      "${1:routes}.${2:get}('/${3:rotas}/:${4:id}', ${5:Rota}Controller.${6:index});",
+      ""
+    ],
+    "description": "create a route with parameter"
+  },
+  "createRouteParamsMiddware": {
+    "prefix": "grpm",
+    "body": [
+      "${1:routes}.${2:get}('/${3:rotas}/:${4:id}', [${5:midware}] , ${6:Rota}Controller.${7:index});",
+      ""
+    ],
+    "description": "create a route with parameter and middleware"
+  },
+  "createClass": {
+    "prefix": "fcc",
+    "body": [
+      "class $TM_FILENAME_BASE {",
+      "$1",
+      "}",
+      "",
+      "export default new $TM_FILENAME_BASE();"
+    ],
+    "description": "create file class"
+  },
+  "createDestructClass": {
+    "prefix": "fccd",
+    "body": [
+      "class $TM_FILENAME_BASE {",
+      "$1",
+      "}",
+      "",
+      "export { $TM_FILENAME_BASE }"
+    ],
+    "description": "create file destruct class"
+  },
+  "createClassExtends": {
+    "prefix": "fcce",
+    "body": [
+      "class $TM_FILENAME_BASE extends ${1:Class}  {",
+      "$2",
+      "}",
+      "",
+      "export default new $TM_FILENAME_BASE();"
+    ],
+    "description": "create a class with extends"
+  },
+  "createClassExtendsDestruct": {
+    "prefix": "fcced",
+    "body": [
+      "class $TM_FILENAME_BASE extends ${1:Class}  {",
+      "$2",
+      "}",
+      "",
+      "export { $TM_FILENAME_BASE };"
+    ],
+    "description": "create a class with extends Destruct"
+  },
+  "createClassImplementsDestruct": {
+    "prefix": "fccid",
+    "body": [
+      "class $TM_FILENAME_BASE implements ${1:Class}  {",
+      "$2",
+      "}",
+      "",
+      "export { $TM_FILENAME_BASE };"
+    ],
+    "description": "create a class with implements Destruct"
+  },
+  "configModelSequelize": {
+    "prefix": "cms",
+    "body": [
+      "import Sequelize, { Model } from 'sequelize';",
+      "",
+      "class $TM_FILENAME_BASE extends Model {",
+      "  static init(sequelize) {",
+      "    super.init(",
+      "      {",
+      "       $1",
+      "      },",
+      "      { sequelize }",
+      "    );",
+      "",
+      "    return this;",
+      "  }",
+      "}",
+      "",
+      "export default $TM_FILENAME_BASE;"
+    ],
+    "description": "Create a Sequelize model with config."
+  },
+  "sequelizeColum": {
+    "prefix": "ccms",
+    "body": ["${1:columns}: Sequelize.${2:STRING}$3,"],
+    "description": "sequelizeColum"
+  },
+  "sequelizeColumString": {
+    "prefix": "ccmss",
+    "body": ["${1:column}: Sequelize.STRING$2,"],
+    "description": "sequelizeColumString"
+  },
+  "sequelizeColumFLOAT": {
+    "prefix": "ccmsf",
+    "body": ["${1:column}: Sequelize.FLOAT$2,"],
+    "description": "sequelizeColumFLOAT$2"
+  },
+  "sequelizeColumINTEGER": {
+    "prefix": "ccmsi",
+    "body": ["${1:column}: Sequelize.INTEGER$2,"],
+    "description": "sequelizeColumINTEGER"
+  },
+  "sequelizeColumENUM": {
+    "prefix": "ccmse",
+    "body": ["${1:column}: Sequelize.ENUM$2,"],
+    "description": "sequelizeColumENUM"
+  },
+  "createBaseMongo": {
+    "prefix": "cfmoo",
+    "body": [
+      "import mongoose from 'mongoose';",
+      "",
+      "const ${1:ExemploSchema} = new mongoose.Schema({",
+      "   ",
+      "});",
+      "",
+      "export default mongoose.model(' $TM_FILENAME_BASE',  ${1:ExemploSchema});"
+    ],
+    "description": " Creates a mongoose schema."
+  },
+  "createAMiddlewareGlobal": {
+    "prefix": "icgm",
+    "body": [
+      "${1:server}.use(request, response, next) => {",
+      "",
+      "next();",
+      "});"
+    ],
+    "description": "Create structured global middleware."
+  },
+  "createAMiddlewarError": {
+    "prefix": "icgme",
+    "body": [
+      "${1:app}.use(function(err, request, response, next) {",
+      "  console.error(err.stack);",
+      "  response.status(500).send('Algo Errado :/!');",
+      "});"
+    ],
+    "description": "Create structured error middleware."
+  },
+  "createAmiddlewareLocal": {
+    "prefix": "cgm",
+    "body": [
+      "function ${1:functionName}(request, response, next) {",
+      "",
+      "next();",
+      "});"
+    ],
+    "description": "Create local middleware on structured pattern"
+  },
+  "createAExportMiddleware": {
+    "prefix": "ecgm",
+    "body": [
+      "export default async (request, response, next) => {",
+      "  return next();",
+      "}"
+    ],
+    "description": " Create an export middleware"
+  }
+}

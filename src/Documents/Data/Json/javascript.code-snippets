@@ -1,0 +1,26 @@
+{
+  "get api": {
+    "prefix": "fetch_data",
+    "body": [
+      "fetch(\"Api_address\")\r",
+      "  .then((response) => {\r",
+      "    if (response.ok) {\r",
+      "      return response.json(); // Parse the response data as JSON\r",
+      "    } else {\r",
+      "      throw new Error(\"API request failed\");\r",
+      "    }\r",
+      "  })\r",
+      "  .then((data) => {\r",
+      "    // Process the response data here\r",
+      "    console.log(data); // Example: Logging the data to the console\r",
+      "  })\r",
+      "  .catch((error) => {\r",
+      "    // Handle any errors here\r",
+      "    console.error(error); // Example: Logging the error to the console\r",
+      "  });\r",
+      ""
+    ],
+    "description": "fech data from a api server",
+    "scope": "javascript"
+  }
+}

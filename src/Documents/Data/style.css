@@ -1,0 +1,409 @@
+:root {
+  /* Light mode variables */
+  --bg-colors: white;
+  --text-color: black;
+  --primary-color: #0a4366;
+  --secondary-color: #0a4f14;
+  --hamburger-color: #f9f9f9;
+  --muted-color: #5d5c5c;
+  --sidebar-bg-color: #f9f9f9;
+  --index-bg-color: #f2f0f0;
+  --sidebar-border-color: #ddd;
+  --link-color: rgb(12, 76, 32);
+  --dev-snip-color: "";
+}
+
+[data-theme="dark"] {
+  /* Dark mode variables */
+  --bg-colors: #060b10;
+  --text-color: #e0e0e0;
+  --primary-color: #12d9e3;
+  --secondary-color: #4caf50;
+  --muted-color: #bdbdbd;
+  --sidebar-bg-color: #060b10;
+  --hamburger-color: #4caf50;
+  --sidebar-border-color: #333;
+  --index-bg-color: #12181f;
+
+  --link-color: #81c784;
+}
+
+.main_container_doc {
+  background-color: var(--bg-colors);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* Default column layout for smaller screens */
+}
+
+.title_doc {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  color: var(--primary-color);
+}
+
+.header_doc {
+  padding-top: 1rem;
+  margin: 0.5rem 0;
+  text-align: left;
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+}
+
+.description_doc {
+  font-size: 0.9rem;
+  color: var(--muted-color);
+}
+
+.contain_docs {
+  margin-right: 320px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.index_doc {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 320px;
+  background-color: var(--index-bg-color);
+  height: 100%;
+  padding: 70px 10px;
+  overflow-y: auto;
+  display: block;
+
+  border-radius: 10px;
+}
+
+.index_doc h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.index_doc ul {
+  list-style: none;
+  padding: 0;
+}
+
+.index_doc li {
+  margin-bottom: 0.5rem;
+}
+
+.index_doc a {
+  text-decoration: none;
+  color: var(--link-color);
+  font-size: 0.9rem;
+}
+
+.index_doc a:hover {
+  text-decoration: underline;
+}
+
+.installation_image {
+  display: flex;
+  justify-content: space-between;
+}
+.downloads_image {
+  width: auto;
+  padding: 0.8rem;
+  margin: 0.5rem;
+}
+.rating_image {
+  width: auto;
+  padding: 0.8rem;
+  margin: 0.5rem;
+}
+
+.copy-button {
+  margin-top: 5px;
+  padding: 5px 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.copy-button:hover {
+  background-color: #45a049;
+}
+.header_doc_snipp {
+  margin: 0rem 2rem;
+}
+
+/* Container Styles */
+.container_vs_code {
+  border-radius: 10px;
+  background-color: var(--index-bg-color);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.flex-row {
+  display: flex;
+  align-items: start;
+  gap: 1.5rem;
+}
+
+/* Logo Styles */
+.logo {
+  padding: 0.5rem;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 0.5rem;
+}
+
+/* Content Styles */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.dev_snip {
+  color: var(--text-color);
+}
+/* Title and Stats */
+.title-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: var(--secondary-color);
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.star-icon {
+  width: 1rem;
+  height: 1rem;
+  fill: #facc15;
+  color: #facc15;
+}
+
+.heart-icon {
+  width: 1rem;
+  height: 1rem;
+  color: #ec4899;
+  fill: currentColor;
+}
+
+/* Description */
+.description {
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.description span {
+  font-size: 1.25rem;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.install-button {
+  background-color: #16a34a;
+  color: #ffffff;
+  padding: 0.5rem 2rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  border: none;
+}
+
+.install-button:hover {
+  background-color: #15803d;
+}
+
+.link {
+  font-size: 0.875rem;
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #93c5fd;
+}
+
+@media screen and (max-width: 480px) {
+  .logo {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .stats {
+    font-size: 0.75rem;
+  }
+
+  .description {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .install-button {
+    width: 100%;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .main_container_doc {
+    padding: 1.5rem 1rem;
+    flex-direction: column;
+  }
+
+  .index_doc {
+    position: relative;
+    width: 100%;
+    border-left: none;
+    border-top: 2px solid var(--sidebar-border-color);
+    padding: 1rem 0.5rem;
+    order: 1;
+  }
+  .title_doc {
+    margin-top: 5rem;
+  }
+  .contain_docs {
+    order: 2;
+    margin-right: 0;
+  }
+  .installation_image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .downloads_image {
+    width: 7rem;
+    margin: 0.5rem;
+  }
+  .rating_image {
+    width: 7rem;
+    margin: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .index_doc {
+    position: relative;
+    width: 100%;
+    border-left: none;
+    border-top: 2px solid var(--sidebar-border-color);
+    padding: 0rem 0.5rem;
+    order: 1;
+    margin-top: 80px;
+  }
+  .title_doc {
+    margin-top: 10px;
+  }
+
+  .main_container_doc {
+    margin: 0;
+    padding: 0;
+  }
+  .index_doc.open {
+    display: block;
+    transform: translateX(0);
+  }
+  .header_doc {
+    font-size: 0.9rem;
+    padding: 0;
+  }
+
+  .contain_docs {
+    margin: 0;
+    flex: 1;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 24px;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    z-index: 101;
+    color: var(--hamburger-color);
+  }
+  .installation_image {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+  }
+  .downloads_image {
+    width: 15rem;
+    height: 3rem;
+    margin: 0 0.5rem;
+  }
+  .rating_image {
+    width: 15rem;
+    height: 3rem;
+    margin: 0 0.5rem;
+  }
+  .header_doc_snipp {
+    margin-top: 4rem;
+    text-align: center;
+    font-size: 1rem;
+  }
+  .title {
+    text-align: center;
+  }
+  .flex-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .stats {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .logo {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .description span {
+    font-size: 1rem;
+  }
+
+  .install-button {
+    padding: 0.5rem 1.5rem;
+  }
+}

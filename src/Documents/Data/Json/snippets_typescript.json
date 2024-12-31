@@ -1,0 +1,1635 @@
+{
+  "consoleLog": {
+    "prefix": "clg.$clg",
+    "body": ["console.log(${1:data})"],
+    "description": "console.log",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "consoleLogWithLabel": {
+    "prefix": "cll.$cll.clg(labelled)",
+    "body": ["console.log('${1:data}', ${1:data})"],
+    "description": "console.log with label",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "consoleLogJSON": {
+    "prefix": "clj.$clj.clg(json)",
+    "body": ["console.log('${1:data}', JSON.stringify(${1:data}, null, 2))"],
+    "description": "console.log JSON",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "consoleX": {
+    "prefix": "ccc.$ccc",
+    "body": ["console.${2|log,info,warn,error|}('👉 ${1:Here}')"],
+    "description": "console.xxx with label",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "consoleInfo": {
+    "prefix": "cin.$cin",
+    "body": ["console.info(${1:data})"],
+    "description": "console.info",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "consoleWarn": {
+    "prefix": "cwa.$cwa",
+    "body": ["console.warn(${1:data})"],
+    "description": "console.warn",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "consoleError": {
+    "prefix": "cer.$cer",
+    "body": ["console.error(${1:data})"],
+    "description": "console.error",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "consoleTable": {
+    "prefix": "ctl.$ctl",
+    "body": ["console.table(${1:data})"],
+    "description": "console.table",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "consoleDir": {
+    "prefix": "cdi.$cdi",
+    "body": ["console.dir(${1:data})"],
+    "description": "console.dir",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "consoleCount": {
+    "prefix": "cco.$cco",
+    "body": ["console.count(${1:data})"],
+    "description": "console.count",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "consoleGroup": {
+    "prefix": "cgr.$cgr",
+    "body": ["console.group(${1:label})"],
+    "description": "console.group",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "consoleGroupEnd": {
+    "prefix": "cge.$cge",
+    "body": ["console.groupEnd()"],
+    "description": "console.groupEnd",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "consoleClear": {
+    "prefix": "ccl.$ccl",
+    "body": ["console.clear()"],
+    "description": "console.clear",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "setTimeout": {
+    "prefix": "sto.$sto",
+    "body": ["setTimeout(() => {", "\t${2:// code}", "}, ${1:1000})", ""],
+    "description": "setTimeout",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "setInterval": {
+    "prefix": "sti.$sti",
+    "body": ["setInterval(() => {", "\t${2:// code}", "}, ${1:1000})", ""],
+    "description": "setInterval",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "arrowFunction": {
+    "prefix": "af.$af",
+    "body": ["const ${1:myFunction} = ($2) => {", "\t${3:// code}", "}"],
+    "description": "Arrow function",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "asyncArrowFunction": {
+    "prefix": "afa.$afa",
+    "body": ["const ${1:myFunction} = async ($2) => {", "\t${3:// code}", "}"],
+    "description": "Async arrow function",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "arrowFunctionExport": {
+    "prefix": "afe.$afe",
+    "body": ["export const ${1:myFunction} = ($2) => {", "\t${3:// code}", "}"],
+    "description": "Arrow function export",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "asyncArrowFunctionExport": {
+    "prefix": "afae.$afae",
+    "body": [
+      "export const ${1:myFunction} = async ($2) => {",
+      "\t${3:// code}",
+      "}"
+    ],
+    "description": "Async arrow function export",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "jsonStringify": {
+    "prefix": "jstr.$jstr.JSON",
+    "body": ["JSON.stringify(${2:data}${1:, null, 2})"],
+    "description": "JSON.stringify",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "jsonParse": {
+    "prefix": "jprs.$jprs.JSON",
+    "body": ["JSON.parse(${1:data})"],
+    "description": "JSON.parse",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "typeOf": {
+    "prefix": "typeof.$typeof",
+    "body": [
+      "typeof ${1:data} ${3|===,!==,==,!=|} '${2|undefined,number,string,boolean,object,function,symbol,bigint|}'"
+    ],
+    "description": "typeof X === ?",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactFnComp": {
+    "prefix": "rFC.$rFC",
+    "body": [
+      "export ${1:default }function ${2:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|(\\w+)/${2:/capitalize}/g}}() {$0",
+      "\treturn (",
+      "\t\t<${3:div}>${4:$2}</$3>",
+      "\t)",
+      "}",
+      ""
+    ],
+    "description": "React Function Component",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactFnCompExport": {
+    "prefix": "rFCe.$rFCe",
+    "body": [
+      "function ${1:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|(\\w+)/${2:/capitalize}/g}}() {$0",
+      "\treturn (",
+      "\t\t<${2:div}>${3:$1}</$2>",
+      "\t)",
+      "}",
+      "",
+      "export default $1",
+      ""
+    ],
+    "description": "React Function Component",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactFnCompNoExport": {
+    "prefix": "rFCne.$rFCne",
+    "body": [
+      "function ${1:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|(\\w+)/${2:/capitalize}/g}}() {$0",
+      "\treturn (",
+      "\t\t<${2:div}>${3:$1}</$2>",
+      "\t)",
+      "}",
+      ""
+    ],
+    "description": "React Function Component",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactFnCompPropTypes": {
+    "prefix": "rFCpropType.$rFCpropType",
+    "body": [
+      "import PropTypes from 'prop-types'",
+      "",
+      "export ${1:default }function ${2:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|(\\w+)/${2:/capitalize}/g}}({ children }) {$0",
+      "\treturn (",
+      "\t\t<${3:div}>${4:{ children \\}}</$3>",
+      "\t)",
+      "}",
+      "",
+      "$2.propTypes = {",
+      "\tchildren: PropTypes.node.isRequired",
+      "}",
+      ""
+    ],
+    "description": "React Function Component with PropTypes",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactArrowFnComp": {
+    "prefix": "rAFC.$rAFC",
+    "body": [
+      "export const ${1:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|(\\w+)/${2:/capitalize}/g}} = () => {$0",
+      "\treturn (",
+      "\t\t<${2:div}>${3:$1}</$2>",
+      "\t)",
+      "}",
+      ""
+    ],
+    "description": "React Arrow Function Component",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactArrowFnCompExport": {
+    "prefix": "rAFCe.$rAFCe",
+    "body": [
+      "const ${1:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|(\\w+)/${2:/capitalize}/g}} = () => {$0",
+      "\treturn (",
+      "\t\t<${2:div}>${3:$1}</$2>",
+      "\t)",
+      "}",
+      "",
+      "export default $1",
+      ""
+    ],
+    "description": "React Arrow Function Component",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactArrowFnCompNoExport": {
+    "prefix": "rAFCne.$rAFCne",
+    "body": [
+      "const ${1:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|(\\w+)/${2:/capitalize}/g}} = () => {$0",
+      "\treturn (",
+      "\t\t<${2:div}>${3:$1}</$2>",
+      "\t)",
+      "}",
+      ""
+    ],
+    "description": "React Arrow Function Component",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactArrowFnCompPropTypes": {
+    "prefix": "rAFCpropType.$rAFCpropType",
+    "body": [
+      "import PropTypes from 'prop-types'",
+      "",
+      "const ${1:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|(\\w+)/${2:/capitalize}/g}} = ({ children }) => {$0",
+      "\treturn (",
+      "\t\t<${2:div}>${3:{ children \\}}</$2>",
+      "\t)",
+      "}",
+      "",
+      "$1.propTypes = {",
+      "\tchildren: PropTypes.node.isRequired",
+      "}",
+      "",
+      "export default $1",
+      ""
+    ],
+    "description": "React Arrow Function Component with PropTypes",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "hocComponent": {
+    "prefix": "hoc.$hoc.rHOC",
+    "body": [
+      "export default function ${1:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|([\\w\\-_]*)/${2:/camelcase}/g}}(WrappedComponent) {$0",
+      "\tconst Component = (props) => {",
+      "\t\treturn <WrappedComponent {...props} />",
+      "\t}",
+      "",
+      "\treturn Component",
+      "}",
+      ""
+    ],
+    "description": "React HOC",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactLazy": {
+    "prefix": "_rLazy.$_rLazy",
+    "body": [
+      "${TM_SELECTED_TEXT/(import )(\\w+)( from )([^;\r\n]+)([;])?/const $2 = lazy(() => import($4))$5/g}",
+      ""
+    ],
+    "description": "Convert import to React.lazy import",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "🟦 TS ReactFnComp": {
+    "prefix": "rFC.TS.$$rFC.(type)",
+    "body": [
+      "type Props = {",
+      "\t$3: ReactNode;",
+      "}",
+      "export ${1:default }function ${2:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|(\\w+)/${2:/capitalize}/g}}({ ${3:children} }: Props) {$0",
+      "\treturn (",
+      "\t\t<${4:div}>${5:$2}</$4>",
+      "\t)",
+      "}",
+      ""
+    ],
+    "description": "React Function Component",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "🟦 TS ReactFnCompExport": {
+    "prefix": "rFCe.TS.$$rFCe.(type)",
+    "body": [
+      "type Props = {",
+      "\t$2: ReactNode;",
+      "}",
+      "function ${1:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|(\\w+)/${2:/capitalize}/g}}({ ${2:children} }: Props) {$0",
+      "\treturn (",
+      "\t\t<${3:div}>${4:$1}</$3>",
+      "\t)",
+      "}",
+      "",
+      "export default $1",
+      ""
+    ],
+    "description": "React Function Component",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "🟦 TS ReactArrowFnComp": {
+    "prefix": "rAFC.TS.$$rAFC.(type)",
+    "body": [
+      "type Props = {",
+      "\t$2: ReactNode;",
+      "}",
+      "export const ${1:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|(\\w+)/${2:/capitalize}/g}} = ({ ${2:children} }: Props) => {$0",
+      "\treturn (",
+      "\t\t<${3:div}>${4:$1}</$3>",
+      "\t)",
+      "}",
+      ""
+    ],
+    "description": "React Arrow Function Component",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "🟦 TS ReactArrowFnCompExport": {
+    "prefix": "rAFCe.TS.$$rAFCe.(type)",
+    "body": [
+      "type Props = {",
+      "\t$2: ReactNode;",
+      "}",
+      "const ${1:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|(\\w+)/${2:/capitalize}/g}} = ({ ${2:children} }: Props) => {$0",
+      "\treturn (",
+      "\t\t<${3:div}>${4:$1}</$3>",
+      "\t)",
+      "}",
+      "",
+      "export default $1",
+      ""
+    ],
+    "description": "React Arrow Function Component",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "🟦 TS ReactFnCompV2": {
+    "prefix": "rFC.TS.$$rFC.(interface)",
+    "body": [
+      "interface Props {",
+      "\t$3: ReactNode;",
+      "}",
+      "export ${1:default }function ${2:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|(\\w+)/${2:/capitalize}/g}}({ ${3:children} }: Props) {$0",
+      "\treturn (",
+      "\t\t<${4:div}>${5:$2}</$4>",
+      "\t)",
+      "}",
+      ""
+    ],
+    "description": "React Function Component",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "🟦 TS ReactFnCompExportV2": {
+    "prefix": "rFCe.TS.$$rFCe.(interface)",
+    "body": [
+      "interface Props {",
+      "\t$2: ReactNode;",
+      "}",
+      "function ${1:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|(\\w+)/${2:/capitalize}/g}}({ ${2:children} }: Props) {$0",
+      "\treturn (",
+      "\t\t<${3:div}>${4:$1}</$3>",
+      "\t)",
+      "}",
+      "",
+      "export default $1",
+      ""
+    ],
+    "description": "React Function Component",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "🟦 TS ReactArrowFnCompV2": {
+    "prefix": "rAFC.TS.$$rAFC.(interface)",
+    "body": [
+      "interface Props {",
+      "\t$2: ReactNode;",
+      "}",
+      "export const ${1:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|(\\w+)/${2:/capitalize}/g}} = ({ ${2:children} }: Props) => {$0",
+      "\treturn (",
+      "\t\t<${3:div}>${4:$1}</$3>",
+      "\t)",
+      "}",
+      ""
+    ],
+    "description": "React Arrow Function Component",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "🟦 TS ReactArrowFnCompExportV2": {
+    "prefix": "rAFCe.TS.$$rAFCe.(interface)",
+    "body": [
+      "interface Props {",
+      "\t$2: ReactNode;",
+      "}",
+      "const ${1:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|(\\w+)/${2:/capitalize}/g}} = ({ ${2:children} }: Props) => {$0",
+      "\treturn (",
+      "\t\t<${3:div}>${4:$1}</$3>",
+      "\t)",
+      "}",
+      "",
+      "export default $1",
+      ""
+    ],
+    "description": "React Arrow Function Component",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "useState": {
+    "prefix": "useState.$useState",
+    "body": [
+      "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState$3($2)"
+    ],
+    "description": "React useState",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "useRef": {
+    "prefix": "useRef.$useRef",
+    "body": ["const ${1:ref} = useRef$3(${2:null})"],
+    "description": "React useRef",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "useReducer": {
+    "prefix": "useReducer.$useReducer",
+    "body": ["const [state, dispatch] = useReducer$3(${1:reducer}, ${2:null})"],
+    "description": "React useReducer",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "useEffect": {
+    "prefix": "useEffect.$useEffect",
+    "body": ["useEffect$3(() => {", "\t${2:// code}", "}, [$1])", ""],
+    "description": "React useEffect",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "useEffectV2": {
+    "prefix": "useEffectV2.$useEffectV2",
+    "body": [
+      "useEffect$4(() => {",
+      "\t${2:// code}",
+      "",
+      "\treturn () => {",
+      "\t\t${3:// cleanup}",
+      "\t}",
+      "}, [$1])",
+      ""
+    ],
+    "description": "React useEffect with cleanup",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "useLayoutEffect": {
+    "prefix": "useLayoutEffect.$useLayoutEffect",
+    "body": ["useLayoutEffect$3(() => {", "\t${2:// code}", "}, [$1])", ""],
+    "description": "React useLayoutEffect",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "useLayoutEffectV2": {
+    "prefix": "useLayoutEffectV2.$useLayoutEffectV2",
+    "body": [
+      "useLayoutEffect$4(() => {",
+      "\t${2:// code}",
+      "",
+      "\treturn () => {",
+      "\t\t${3:// cleanup}",
+      "\t}",
+      "}, [$1])",
+      ""
+    ],
+    "description": "React useLayoutEffect with cleanup",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "useMemo": {
+    "prefix": "useMemo.$useMemo",
+    "body": ["const ${1:memo} = useMemo$4(() => ${3:computeValue}, [$2])"],
+    "description": "React useMemo",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "useCallback": {
+    "prefix": "useCallback.$useCallback",
+    "body": [
+      "const ${1:callback} = useCallback$4(() => {",
+      "\t${3:// code}",
+      "}, [$2])"
+    ],
+    "description": "React useCallback",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactCustomHook": {
+    "prefix": "rFHook.$rFHook.hook",
+    "body": [
+      "import { useEffect } from 'react'",
+      "",
+      "export default function ${1:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|([\\w\\-_]*)/${2:/camelcase}/g}}() {",
+      "\t${0:// code}",
+      "\t",
+      "\tuseEffect(() => {",
+      "\t\t// code",
+      "\t}, [])",
+      "\t",
+      "\treturn null",
+      "}"
+    ],
+    "description": "React create custom hook",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactCustomHookArrowFn": {
+    "prefix": "rAFHook.$rAFHook.hook",
+    "body": [
+      "import { useEffect } from 'react'",
+      "",
+      "const ${1:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|([\\w\\-_]*)/${2:/camelcase}/g}} = () => {",
+      "\t${0:// code}",
+      "\t",
+      "\tuseEffect(() => {",
+      "\t\t// code",
+      "\t}, [])",
+      "\t",
+      "\treturn null",
+      "}",
+      "",
+      "export default $1"
+    ],
+    "description": "React create custom hook arrow function",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactCustomHookArrowFnExport": {
+    "prefix": "rAFHookEx.$rAFHookEx.hook",
+    "body": [
+      "import { useEffect } from 'react'",
+      "",
+      "export const ${1:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|([\\w\\-_]*)/${2:/camelcase}/g}} = () => {",
+      "\t${0:// code}",
+      "\t",
+      "\tuseEffect(() => {",
+      "\t\t// code",
+      "\t}, [])",
+      "\t",
+      "\treturn null",
+      "}"
+    ],
+    "description": "React create custom hook arrow function",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "🟦 TS UseState": {
+    "prefix": "useState.TS.$$useState",
+    "body": [
+      "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState$4<${3:any}>($2)"
+    ],
+    "description": "React useState",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "🟦 TS UseRef": {
+    "prefix": "useRef.TS.$$useRef",
+    "body": ["const ${1:ref} = useRef$4<${3:HTMLDivElement}>(${2:null})"],
+    "description": "React useRef",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "🟦 TS UseMemo": {
+    "prefix": "useMemo.TS.$$useMemo",
+    "body": [
+      "const ${1:memo} = useMemo$5<${4:any}>(() => ${3:computeValue}, [$2])"
+    ],
+    "description": "React useMemo",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "🟦 TS UseCallback": {
+    "prefix": "useCallback.TS.$$useCallback",
+    "body": [
+      "const ${1:callback} = useCallback$5<() => ${4:void}>(() => {",
+      "\t${3:// code}",
+      "}, [$2])"
+    ],
+    "description": "React useCallback",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "nextSSR": {
+    "prefix": "nSSR.$nSSR.getServerSideProps",
+    "body": [
+      "export async function getServerSideProps(${1:{ req, res, params, query \\}}) {",
+      "\t${0:// code}",
+      "",
+      "\treturn {",
+      "\t\tprops: {},",
+      "\t}",
+      "}",
+      ""
+    ],
+    "description": "Next.js getServerSideProps",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "nextSSG": {
+    "prefix": "nSSG.$nSSG.getStaticProps",
+    "body": [
+      "export async function getStaticProps(${1:{ params \\}}) {",
+      "\t${0:// code}",
+      "",
+      "\treturn {",
+      "\t\tprops: {},",
+      "\t}",
+      "}",
+      ""
+    ],
+    "description": "Next.js getStaticProps",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "nextGSP": {
+    "prefix": "nGSP.$nGSP.getStaticPaths",
+    "body": [
+      "export async function getStaticPaths() {",
+      "\t${0:// code}",
+      "",
+      "\treturn {",
+      "\t\tpaths: [],",
+      "\t\tfallback: ${1|true,false,'blocking'|},",
+      "\t}",
+      "}",
+      ""
+    ],
+    "description": "Next.js getStaticPaths",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "nextSSRArrowFn": {
+    "prefix": "naSSR.$naSSR.getServerSideProps",
+    "body": [
+      "export const getServerSideProps = async (${1:{ req, res, params, query \\}}) => {",
+      "\t${0:// code}",
+      "",
+      "\treturn {",
+      "\t\tprops: {},",
+      "\t}",
+      "}",
+      ""
+    ],
+    "description": "Next.js getServerSideProps arrow function",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "nextSSGArrowFn": {
+    "prefix": "naSSG.$naSSG.getStaticProps",
+    "body": [
+      "export const getStaticProps = async (${1:{ params \\}}) => {",
+      "\t${0:// code}",
+      "",
+      "\treturn {",
+      "\t\tprops: {},",
+      "\t}",
+      "}",
+      ""
+    ],
+    "description": "Next.js getStaticProps arrow function",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "nextGSPArrowFn": {
+    "prefix": "naGSP.$naGSP.getStaticPaths",
+    "body": [
+      "export const getStaticPaths = async () => {",
+      "\t${0:// code}",
+      "",
+      "\treturn {",
+      "\t\tpaths: [],",
+      "\t\tfallback: ${1|true,false,'blocking'|},",
+      "\t}",
+      "}",
+      ""
+    ],
+    "description": "Next.js getStaticPaths arrow function",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "nextUseRouter": {
+    "prefix": "nUseRouter.$nUseRouter.useRouter",
+    "body": ["const { ${1:pathname, query} } = useRouter$2()"],
+    "description": "Next.js useRouter",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "nextLinkComponent": {
+    "prefix": "nLink.$nLink",
+    "body": ["<Link href=${1:\"/\"}>", "\t<a>${2:LinkText}</a>", "</Link>"],
+    "description": "Next.js Link component",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "nextCustomDocComponent": {
+    "prefix": "nDoc.$nDoc",
+    "body": [
+      "import { Html, Head, Main, NextScript } from 'next/document'",
+      "",
+      "export default function Document() {",
+      "\treturn (",
+      "\t\t<Html>",
+      "\t\t\t<Head />",
+      "\t\t\t<body>",
+      "\t\t\t\t<Main />",
+      "\t\t\t\t<NextScript />",
+      "\t\t\t</body>",
+      "\t\t</Html>",
+      "\t)",
+      "}",
+      ""
+    ],
+    "description": "Next.js Custom Document component",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "nextDynamicImport": {
+    "prefix": "nDyn.$nDyn._nDyn",
+    "body": [
+      "${TM_SELECTED_TEXT/(import )(\\w+)( from )([^;\r\n]+)([;])?/const $2 = dynamic(() => import($4))$5/g}"
+    ],
+    "description": "Convert import to Next.js dynamic import",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "nextDynamicImportNamed": {
+    "prefix": "nDynNamed.$nDynNamed._nDynNamed",
+    "body": [
+      "${TM_SELECTED_TEXT/(import ){ ?(\\w+) ?}( from )([^;\r\n]+)([;])?/const $2 = dynamic(() => import($4).then(mod => mod.$2))$5/g}"
+    ],
+    "description": "Convert import to Next.js dynamic import",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "🟦 TS NextSSR": {
+    "prefix": "nSSR.TS.$$nSSR.getServerSideProps",
+    "body": [
+      "import { GetServerSidePropsContext, GetServerSidePropsResult } from 'next'",
+      "",
+      "type Context = GetServerSidePropsContext",
+      "type Result = GetServerSidePropsResult<{ ${1:data}: any }>",
+      "",
+      "export async function getServerSideProps(ctx: Context): Promise<Result> {",
+      "\tconst { ${2:req, res, params, query} } = ctx",
+      "\t$0",
+      "\treturn {",
+      "\t\tprops: {",
+      "\t\t\t$1: null,",
+      "\t\t},",
+      "\t}",
+      "}",
+      ""
+    ],
+    "description": "Next.js getServerSideProps",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "🟦 TS NextSSG": {
+    "prefix": "nSSG.TS.$$nSSG.getStaticProps",
+    "body": [
+      "import { GetStaticPropsContext, GetStaticPropsResult } from 'next'",
+      "",
+      "type Context = GetStaticPropsContext",
+      "type Result = GetStaticPropsResult<{ ${1:data}: any }>",
+      "",
+      "export async function getStaticProps({ params }: Context): Promise<Result> {",
+      "\t${0:// code}",
+      "",
+      "\treturn {",
+      "\t\tprops: {",
+      "\t\t\t$1: null,",
+      "\t\t},",
+      "\t}",
+      "}",
+      ""
+    ],
+    "description": "Next.js getStaticProps",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "🟦 TS NextGSP": {
+    "prefix": "nGSP.TS.$$nGSP.getStaticPaths",
+    "body": [
+      "import { GetStaticPathsResult } from 'next'",
+      "",
+      "export async function getStaticPaths(): Promise<GetStaticPathsResult> {",
+      "\t${0:// code}",
+      "",
+      "\treturn {",
+      "\t\tpaths: [],",
+      "\t\tfallback: ${1|true,false,'blocking'|},",
+      "\t}",
+      "}",
+      ""
+    ],
+    "description": "Next.js getStaticPaths",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "🟦 TS NextSSRArrowFn": {
+    "prefix": "naSSR.TS.$$naSSR.getServerSideProps",
+    "body": [
+      "import { GetServerSideProps } from 'next'",
+      "",
+      "export const getServerSideProps: GetServerSideProps<{ ${1:data}: any }> = async (ctx) => {",
+      "\tconst { ${2:req, res, params, query} } = ctx",
+      "\t$0",
+      "\treturn {",
+      "\t\tprops: {",
+      "\t\t\t$1: null,",
+      "\t\t},",
+      "\t}",
+      "}",
+      ""
+    ],
+    "description": "Next.js getServerSideProps arrow function",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "🟦 TS NextSSGArrowFn": {
+    "prefix": "naSSG.TS.$$naSSG.getStaticProps",
+    "body": [
+      "import { GetStaticProps } from 'next'",
+      "",
+      "export const getStaticProps: GetStaticProps<{ ${1:data}: any }> = async (ctx) => {",
+      "\tconst { params } = ctx",
+      "\t$0",
+      "\treturn {",
+      "\t\tprops: {",
+      "\t\t\t$1: null,",
+      "\t\t},",
+      "\t}",
+      "}",
+      ""
+    ],
+    "description": "Next.js getStaticProps arrow function",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "🟦 TS NextGSPArrowFn": {
+    "prefix": "naGSP.TS.$$naGSP.getStaticPaths",
+    "body": [
+      "import { GetStaticPaths } from 'next'",
+      "",
+      "export const getStaticPaths: GetStaticPaths = async () => {",
+      "\t${0:// code}",
+      "",
+      "\treturn {",
+      "\t\tpaths: [],",
+      "\t\tfallback: ${1|true,false,'blocking'|},",
+      "\t}",
+      "}",
+      ""
+    ],
+    "description": "Next.js getStaticPaths arrow function",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactNativeFnComp": {
+    "prefix": "rnFC.$rnFC",
+    "body": [
+      "import React from 'react'",
+      "import { View, Text } from 'react-native'",
+      "",
+      "export default function ${1:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|(\\w+)/${2:/capitalize}/g}}() {$0",
+      "\treturn (",
+      "\t\t<View>",
+      "\t\t\t<Text>${2:$1}</Text>",
+      "\t\t</View>",
+      "\t)",
+      "}",
+      ""
+    ],
+    "description": "React Native Function Component",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactNativeFnCompExport": {
+    "prefix": "rnFCe.$rnFCe",
+    "body": [
+      "import React from 'react'",
+      "import { View, Text } from 'react-native'",
+      "",
+      "function ${1:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|(\\w+)/${2:/capitalize}/g}}() {$0",
+      "\treturn (",
+      "\t\t<View>",
+      "\t\t\t<Text>${2:$1}</Text>",
+      "\t\t</View>",
+      "\t)",
+      "}",
+      "",
+      "export default $1",
+      ""
+    ],
+    "description": "React Native Function Component",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactNativeArrowFnComp": {
+    "prefix": "rnAFC.$rnAFC",
+    "body": [
+      "import React from 'react'",
+      "import { View, Text } from 'react-native'",
+      "",
+      "export const ${1:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|(\\w+)/${2:/capitalize}/g}} = () => {$0",
+      "\treturn (",
+      "\t\t<View>",
+      "\t\t\t<Text>${2:$1}</Text>",
+      "\t\t</View>",
+      "\t)",
+      "}",
+      ""
+    ],
+    "description": "React Native Arrow Function Component",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactNativeArrowFnCompExport": {
+    "prefix": "rnAFCe.$rnAFCe",
+    "body": [
+      "import React from 'react'",
+      "import { View, Text } from 'react-native'",
+      "",
+      "const ${1:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|(\\w+)/${2:/capitalize}/g}} = () => {$0",
+      "\treturn (",
+      "\t\t<View>",
+      "\t\t\t<Text>${2:$1}</Text>",
+      "\t\t</View>",
+      "\t)",
+      "}",
+      "",
+      "export default $1",
+      ""
+    ],
+    "description": "React Native Arrow Function Component",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactRouterUseParams": {
+    "prefix": "rou.$rou.useParams",
+    "body": ["const { $1 } = useParams$2()"],
+    "description": "React Router useParams",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactRouterUseLocation": {
+    "prefix": "rou.$rou.useLocation",
+    "body": ["const { pathname } = useLocation$1()"],
+    "description": "React Router useLocation",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactRouterUseNavigate": {
+    "prefix": "rou.$rou.useNavigate",
+    "body": ["const navigate = useNavigate$1()"],
+    "description": "React Router useNavigate",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactRouterUseSearchParams": {
+    "prefix": "rou.$rou.useSearchParams",
+    "body": ["const [searchParams, setSearchParams] = useSearchParams$1()"],
+    "description": "React Router useSearchParams",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactRouterCreate": {
+    "prefix": "rou.$rou.createBrowserRouter",
+    "body": [
+      "const router = createBrowserRouter([",
+      "\t{",
+      "\t\tpath: \"/$1\",",
+      "\t\telement: <${2:Root} />,",
+      "\t\terrorElement: <ErrorPage />,",
+      "\t\tloader: rootLoader,$3",
+      "\t},",
+      "])",
+      ""
+    ],
+    "description": "React Router v6 createBrowserRouter",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactRouterChildren": {
+    "prefix": "rou.$rou.children",
+    "body": [
+      "children: [",
+      "\t{",
+      "\t\tpath: \"$1\",",
+      "\t\telement: <${2:DetailPage} />,",
+      "\t\tloader: ${3:detailPageLoader},",
+      "\t},",
+      "],"
+    ],
+    "description": "React Router v6 router children",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactRouterUseRouterError": {
+    "prefix": "rou.$rou.useRouteError",
+    "body": ["const error = useRouteError()"],
+    "description": "React Router v6 useRouteError",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactRouterUseLoaderData": {
+    "prefix": "rou.$rou.useLoaderData",
+    "body": ["const { $1 } = useLoaderData$2()"],
+    "description": "React Router v6 useLoaderData",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactRouterUseNavigation": {
+    "prefix": "rou.$rou.useNavigation",
+    "body": ["const { ${1:state, location} } = useNavigation$2()"],
+    "description": "React Router v6 useNavigation",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactRouterUseHistory": {
+    "prefix": "rou.$rou.useHistory",
+    "body": ["const { ${1:location, push, replace, goBack} } = useHistory$2()"],
+    "description": "React Router v5 useHistory",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "rqQuery": {
+    "prefix": "rqUseQue.$rqUseQue",
+    "body": ["const { isLoading, data, error } = ${2:useQuery}$3($1)", ""],
+    "description": "React Query useQuery",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "rqMutation": {
+    "prefix": "rqUseMut.$rqUseMut",
+    "body": ["const { mutate, isLoading } = ${2:useMutation}$3($1)", ""],
+    "description": "React Query useMutation",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "rqInfQuery": {
+    "prefix": "rqUseInf.$rqUseInf",
+    "body": [
+      "const { isLoading, isFetchingNextPage, data, error, fetchNextPage } = useInfiniteQuery$2($1)",
+      ""
+    ],
+    "description": "React Query useInfiniteQuery",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "rqQueryCustomHook": {
+    "prefix": "rqUseQue.$rqUseQue.hook",
+    "body": [
+      "export const use${1:Todo}Query = () => useQuery(['${1/(.*)/${1:/downcase}/}'], fetch$1)",
+      ""
+    ],
+    "description": "React Query useQuery custom hook",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "rqLDE": {
+    "prefix": "rqLDE.$rqLDE",
+    "body": [
+      "if (isLoading) {",
+      "\treturn <div>⏳ Loading</div>",
+      "}",
+      "",
+      "if (data) {",
+      "\treturn <div>🎉 Yay!</div>",
+      "}",
+      "",
+      "return <div>🚫 Nay! ({error.message})</div>"
+    ],
+    "description": "React Query Loading-Data-Error pattern",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "rqQueryLDE": {
+    "prefix": "rqUseQueLDE.$rqUseQueLDE",
+    "body": [
+      "const { isLoading, data, error } = ${2:useQuery}$3($1)",
+      "",
+      "if (isLoading) {",
+      "\treturn <div>⏳ Loading</div>",
+      "}",
+      "",
+      "if (data) {",
+      "\treturn <div>🎉 Yay!</div>",
+      "}",
+      "",
+      "return <div>🚫 Nay! ({error.message})</div>"
+    ],
+    "description": "React Query useQuery with Loading-Data-Error pattern",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "rqLED": {
+    "prefix": "rqLED.$rqLED",
+    "body": [
+      "if (isLoading) {",
+      "\treturn <div>⏳ Loading</div>",
+      "}",
+      "",
+      "if (error) {",
+      "\treturn <div>🚫 Nay! ({error.message})</div>",
+      "}",
+      "",
+      "return <div>🎉 Yay!</div>"
+    ],
+    "description": "React Query Loading-Error-Data pattern",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "rqQueryLED": {
+    "prefix": "rqUseQueLED.$rqUseQueLED",
+    "body": [
+      "const { isLoading, error, data } = ${2:useQuery}$3($1)",
+      "",
+      "if (isLoading) {",
+      "\treturn <div>⏳ Loading</div>",
+      "}",
+      "",
+      "if (error) {",
+      "\treturn <div>🚫 Nay! ({error.message})</div>",
+      "}",
+      "",
+      "return <div>🎉 Yay!</div>"
+    ],
+    "description": "React Query useQuery with Loading-Error-Data pattern",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "swrQuery": {
+    "prefix": "swrQue.$swrQue",
+    "body": [
+      "const { data, error } = useSWR(${1:'/api/todo'}, ${2:fetchTodo})",
+      ""
+    ],
+    "description": "SWR query",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "swrQueryCustomHook": {
+    "prefix": "swrQue.$swrQue.hook",
+    "body": [
+      "const use${1:Todo} = () => {",
+      "\tconst { data, error } = useSWR(${2:'/api/todo'}, ${3:fetchTodo})",
+      "",
+      "\treturn {",
+      "\t\tdata,",
+      "\t\tisLoading: !error && !data,",
+      "\t\terror",
+      "\t}",
+      "}",
+      ""
+    ],
+    "description": "SWR query custom hook",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "swrMutation": {
+    "prefix": "swrMut.$swrMut",
+    "body": ["const { mutate } = useSWRConfig$1()", ""],
+    "description": "SWR mutation",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "rhfUseForm": {
+    "prefix": "useForm.$useForm.rhf",
+    "body": [
+      "const { ${1:register, control, handleSubmit, formState: { errors \\}} } = useForm$2($0)",
+      "const onSubmit = data => console.log(data)"
+    ],
+    "description": "React Hook Form `useForm` hook",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "rhfUseFormYup": {
+    "prefix": "useForm.$useForm.rhfYup",
+    "body": [
+      "const schema = yup$4.object({",
+      "\t${3:// schema fields}",
+      "}).required()",
+      "",
+      "const { ${1:register, control, handleSubmit, formState: { errors \\}} } = useForm$2({",
+      "\tresolver: yupResolver(schema)",
+      "})",
+      "const onSubmit = data => console.log(data)"
+    ],
+    "description": "React Hook Form `useForm` hook with yupResolver",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "rhfCreateFormProvider": {
+    "prefix": "useForm.$useForm.rhfProv",
+    "body": [
+      "const methods = useForm$1($2)",
+      "const onSubmit = data => console.log(data)",
+      "",
+      "return (",
+      "\t<FormProvider {...methods} >",
+      "\t\t<form onSubmit={methods.handleSubmit(onSubmit)}>",
+      "\t\t\t${0:<NestedInputs />}",
+      "\t\t</form>",
+      "\t</FormProvider>",
+      ")"
+    ],
+    "description": "React Hook Form create form with `FormProvider`",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "zuCreate": {
+    "prefix": "zuc.$zuc",
+    "body": [
+      "import create from 'zustand'",
+      "",
+      "const use${1:Store} = create((set) => ({",
+      "\t${0:// code}",
+      "}))",
+      "",
+      "export default use$1"
+    ],
+    "description": "Zustand create store",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "zuCreateImmer": {
+    "prefix": "zuci.$zuci",
+    "body": [
+      "import create from 'zustand'",
+      "import { immer } from 'zustand/middleware/immer'",
+      "",
+      "const use${1:Store} = create(immer((set) => ({",
+      "\t${0:// code}",
+      "})))",
+      "",
+      "export default use$1"
+    ],
+    "description": "Zustand create store",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "zuUse": {
+    "prefix": "zuu.$zuu",
+    "body": ["const ${2:bears} = use${1:Store}(state => state.$2)"],
+    "description": "Zustand useStore",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "zuUsePickObj": {
+    "prefix": "zuuObj.$zuuObj",
+    "body": [
+      "const { ${2:nuts}, ${3:honey} } = use${1:Store}(state => ({ $2: state.$2, $3: state.$3 }), shallow$4)"
+    ],
+    "description": "Zustand useStore with shallow",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "zuUsePickArr": {
+    "prefix": "zuuArr.$zuuArr",
+    "body": [
+      "const [${2:nuts}, ${3:honey}] = use${1:Store}(state => [state.$2, state.$3], shallow$4)"
+    ],
+    "description": "Zustand useStore with shallow",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "rxUseDispatch": {
+    "prefix": "rxDispatch.$rxDispatch.useDispatch",
+    "body": ["const dispatch = useDispatch$1()", ""],
+    "description": "Redux useDispatch",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "rxConfigStore": {
+    "prefix": "rxStore.$rxStore.configureStore",
+    "body": [
+      "import { configureStore } from '@reduxjs/toolkit'",
+      "",
+      "const ${1:store} = configureStore({",
+      "\treducer: {",
+      "\t\t$2",
+      "\t},",
+      "})",
+      "",
+      "export default $1"
+    ],
+    "description": "Redux configureStore",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "rxCreateSlice": {
+    "prefix": "rxSlice.$rxSlice.createSlice",
+    "body": [
+      "const initialState = {",
+      "\t${2:value: 0,}",
+      "}",
+      "",
+      "export const ${1:counter}Slice = createSlice({",
+      "\tname: '$1',",
+      "\tinitialState,",
+      "\treducers: {",
+      "\t\t$3",
+      "\t},",
+      "})",
+      "",
+      "export const { $0 } = $1Slice.actions",
+      "",
+      "export default $1Slice.reducer"
+    ],
+    "description": "Redux createSlice",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "rxCreateSliceWithExample": {
+    "prefix": "rxSlice.$rxSlice.createSliceWithExample",
+    "body": [
+      "const initialState = {",
+      "\t${2:value: 0,}",
+      "}",
+      "",
+      "export const ${1:counter}Slice = createSlice({",
+      "\tname: '$1',",
+      "\tinitialState,",
+      "\treducers: {",
+      "\t\t$3increment: (state) => {",
+      "\t\t\tstate.value += 1",
+      "\t\t},",
+      "\t\tdecrement: (state) => {",
+      "\t\t\tstate.value -= 1",
+      "\t\t},",
+      "\t\tincrementByAmount: (state, action) => {",
+      "\t\t\tstate.value += action.payload",
+      "\t\t},",
+      "\t},",
+      "})",
+      "",
+      "export const { increment, decrement, incrementByAmount } = $1Slice.actions",
+      "",
+      "export default $1Slice.reducer"
+    ],
+    "description": "Redux createSlice (with example)",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "🟦 TS RxConfigStore": {
+    "prefix": "rxStore.TS.$$rxStore.configureStore",
+    "body": [
+      "import { configureStore } from '@reduxjs/toolkit'",
+      "",
+      "const ${1:store} = configureStore({",
+      "\treducer: {",
+      "\t\t$2",
+      "\t},",
+      "})",
+      "",
+      "export default $1",
+      "",
+      "export type RootState = ReturnType<typeof $1.getState>",
+      "",
+      "export type AppDispatch = typeof $1.dispatch"
+    ],
+    "description": "Redux configure store",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactFnCompEmotion": {
+    "prefix": "emoRFC.$emoRFC",
+    "body": [
+      "import * as styles from './styles'",
+      "",
+      "export default function ${1:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|(\\w+)/${2:/capitalize}/g}}() {$0",
+      "\treturn (",
+      "\t\t<${2:div} css={styles.${3:container}}>${4:$1}</$2>",
+      "\t)",
+      "}",
+      ""
+    ],
+    "description": "React Function Component with Emotion CSS",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactFnCompExportEmotion": {
+    "prefix": "emoRFCe.$emoRFCe",
+    "body": [
+      "import * as styles from './styles'",
+      "",
+      "function ${1:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|(\\w+)/${2:/capitalize}/g}}() {$0",
+      "\treturn (",
+      "\t\t<${2:div} css={styles.${3:container}}>${4:$1}</$2>",
+      "\t)",
+      "}",
+      "",
+      "export default $1",
+      ""
+    ],
+    "description": "React Function Component with Emotion CSS",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactArrowFnCompEmotion": {
+    "prefix": "emoRAFC.$emoRAFC",
+    "body": [
+      "import * as styles from './styles'",
+      "",
+      "export const ${1:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|(\\w+)/${2:/capitalize}/g}} = () => {$0",
+      "\treturn (",
+      "\t\t<${2:div} css={styles.${3:container}}>${4:$1}</$2>",
+      "\t)",
+      "}",
+      ""
+    ],
+    "description": "React Arrow Function Component with Emotion CSS",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactArrowFnCompExportEmotion": {
+    "prefix": "emoRAFCe.$emoRAFCe",
+    "body": [
+      "import * as styles from './styles'",
+      "",
+      "const ${1:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|(\\w+)/${2:/capitalize}/g}} = () => {$0",
+      "\treturn (",
+      "\t\t<${2:div} css={styles.${3:container}}>${4:$1}</$2>",
+      "\t)",
+      "}",
+      "",
+      "export default $1",
+      ""
+    ],
+    "description": "React Arrow Function Component with Emotion CSS",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "testDescribe": {
+    "prefix": "tDescribe.$tDescribe.describe(test)",
+    "body": [
+      "describe('${1:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|(\\w+)/${2:/capitalize}/g}}', () => {",
+      "\t${0:// code}",
+      "})"
+    ],
+    "description": "Testing `describe` block",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "testIt": {
+    "prefix": "tIt.$tIt.it(test)",
+    "body": [
+      "it('should ${1:work}', ${2:async }() => {",
+      "\t${0:// code}",
+      "})"
+    ],
+    "description": "Testing `it` block",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "test": {
+    "prefix": "tTest.$tTest.(test)",
+    "body": [
+      "test('${1:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|(\\w+)/${2:/capitalize}/g}}', ${2:async }() => {",
+      "\t${0:// code}",
+      "})"
+    ],
+    "description": "Testing `test` block",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "testBefore": {
+    "prefix": "tBefore.$tBefore.before(test)",
+    "body": ["${1|beforeEach,beforeAll|}(() => {", "\t${0:// code}", "})"],
+    "description": "Testing `beforeAll` / `beforeEach` block",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "testAfter": {
+    "prefix": "tAfter.$tAfter.after(test)",
+    "body": ["${1|afterEach,afterAll|}(() => {", "\t${0:// code}", "})"],
+    "description": "Testing `afterAll` / `afterEach` block",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "stringToTemplateLiterals": {
+    "prefix": "_lt.$_lt",
+    "body": ["`${TM_SELECTED_TEXT/^['\"](.*)['\"]$/$1/g}`"],
+    "description": "Convert regular string to template literals",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactStringPropToTemplateLiteral": {
+    "prefix": "_ltr.$_ltr",
+    "body": ["{`${TM_SELECTED_TEXT/^['\"](.*)['\"]$/$1/g}`}"],
+    "description": "Convert regular string in react prop's value to template literals",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "wrapWithUseMemo": {
+    "prefix": "_useMemo.$_useMemo",
+    "body": ["useMemo$0(() => {", "\t$TM_SELECTED_TEXT", "}, ${1:[]})"],
+    "description": "Wrap with function",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "wrapWithUseCallback": {
+    "prefix": "_useCallback.$_useCallback",
+    "body": ["useCallback$0(", "\t$TM_SELECTED_TEXT", ", ${1:[]})"],
+    "description": "Wrap with function",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "wrapWithFragment": {
+    "prefix": "_rFrag.$_rFrag._frag",
+    "body": ["<$1$0>", "\t$TM_SELECTED_TEXT", "</$1>"],
+    "description": "Wrap component with Fragment",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactIf": {
+    "prefix": "_rIf.$_rIf",
+    "body": [
+      "{${1:condition} ? (",
+      "\t$TM_SELECTED_TEXT",
+      ") : (",
+      "\t${0:null}",
+      ")}"
+    ],
+    "description": "Wrap in if",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactIfWithFragment": {
+    "prefix": "_rIfFrag.$_rIfFrag",
+    "body": [
+      "{${1:condition} ? (",
+      "\t<>",
+      "\t\t$TM_SELECTED_TEXT",
+      "\t</>",
+      ") : (",
+      "\t${0:null}",
+      ")}"
+    ],
+    "description": "Wrap in if",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactElse": {
+    "prefix": "_rEl.$_rEl",
+    "body": [
+      "{${1:condition} ? (",
+      "\t${0:null}",
+      ") : (",
+      "\t$TM_SELECTED_TEXT",
+      ")}"
+    ],
+    "description": "Wrap in else",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactElseWithFragment": {
+    "prefix": "_rElFrag.$_rElFrag",
+    "body": [
+      "{${1:condition} ? (",
+      "\t${0:null}",
+      ") : (",
+      "\t<>",
+      "\t\t$TM_SELECTED_TEXT",
+      "\t</>",
+      ")}"
+    ],
+    "description": "Wrap in else",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactConditional": {
+    "prefix": "_rCon.$_rCon",
+    "body": ["{${1:condition} && (", "\t$TM_SELECTED_TEXT", ")}"],
+    "description": "Wrap with conditional",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "reactConditionalWithFragment": {
+    "prefix": "_rConFrag.$_rConFrag",
+    "body": [
+      "{${1:condition} && (",
+      "\t<>",
+      "\t\t$TM_SELECTED_TEXT",
+      "\t</>",
+      ")}"
+    ],
+    "description": "Wrap with conditional",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "wrapWithJsonStringify": {
+    "prefix": "_jstr.$_jstr.JSON",
+    "body": ["JSON.stringify($TM_SELECTED_TEXT${1:, null, 2})"],
+    "description": "Wrap with `JSON.stringify`",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "wrapWithJsonParse": {
+    "prefix": "_jprs.$_jprs.JSON",
+    "body": ["JSON.parse($TM_SELECTED_TEXT)"],
+    "description": "Wrap with `JSON.parse`",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "jsxInnerHTML": {
+    "prefix": "innerHTML.$innerHTML.dangerously",
+    "body": ["<${1:div} dangerouslySetInnerHTML={{ __html: $2 }} />"],
+    "description": "Create element with `dangerouslySetInnerHTML` prop",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "jsxButton": {
+    "prefix": "button.$button",
+    "body": [
+      "<button type=\"button\" onClick={${2:onClick}}$3>",
+      "\t${1:Button}",
+      "</button>"
+    ],
+    "description": "Create `<button />` element",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "jsxLoop": {
+    "prefix": "loopJSX.$loopJSX",
+    "body": [
+      "{${1:list}.map((${2:$1Item}) => {$5",
+      "\treturn (",
+      "\t\t<${4:div} key={${2:$1Item}.${3:id}}>$0</$4>",
+      "\t)",
+      "})}"
+    ],
+    "description": "JSX mapping an array",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "yupV0Schema": {
+    "prefix": "yupSchema.$yupSchema",
+    "body": [
+      "export const ${1:user}Schema = yup.object({",
+      "\t${2:name}: ${3:yup.string().required()},",
+      "})",
+      "",
+      "export type ${1/(.*)/${1:/capitalize}/} = yup.Asserts<typeof ${1:user}Schema>",
+      ""
+    ],
+    "description": "Yup v0 schema",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "yupV1Schema": {
+    "prefix": "yupSchema.$yupSchema",
+    "body": [
+      "export const ${1:user}Schema = yup.object({",
+      "\t${2:name}: ${3:yup.string().required()},",
+      "})",
+      "",
+      "export type ${1/(.*)/${1:/capitalize}/} = yup.InferType<typeof ${1:user}Schema>",
+      ""
+    ],
+    "description": "Yup v1 schema",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "getFileNamePascalCase": {
+    "prefix": "fnpascalcase.$fnpascalcase",
+    "body": [
+      "${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|(\\w+)/${2:/capitalize}/g}"
+    ],
+    "description": "Get filename in PascalCase",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "getFileNameCamelCase": {
+    "prefix": "fncamelcase.$fncamelcase",
+    "body": [
+      "${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|([\\w\\-_]*)/${2:/camelcase}/g}"
+    ],
+    "description": "Get filename in camelCase",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "generatePropTypes": {
+    "prefix": "genPropTypes.$genPropTypes",
+    "body": [
+      "${1:${RELATIVE_FILEPATH/(\\.[jt]sx?$|[\\/\\\\](?:index|\\[).*|.+[\\/\\\\](?!(?:index|page|\\[))|[.\\-_\\/\\\\])|(\\w+)/${2:/capitalize}/g}}.propTypes = {",
+      "${CLIPBOARD/(\\=\\s*[^,]*),?|(\\w+)|(\\s*),?/${2:+  }$2${2:+: PropTypes.any,\n}/gm}}",
+      ""
+    ],
+    "description": "From clipboard (parameters) » generate PropTypes",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "🟦 generateInterface": {
+    "prefix": "genInt.TS.$$genInt",
+    "body": [
+      "interface ${1:Props} {",
+      "${CLIPBOARD/(\\=\\s*[^,]*),?|(\\w+)|(\\s*),?/${2:+  }$2${2:+: unknown;\n}/gm}}",
+      ""
+    ],
+    "description": "From clipboard (parameters) » generate interface",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  },
+  "🟦 generateType": {
+    "prefix": "genType.TS.$$genType",
+    "body": [
+      "type ${1:Props} = {",
+      "${CLIPBOARD/(\\=\\s*[^,]*),?|(\\w+)|(\\s*),?/${2:+  }$2${2:+: unknown;\n}/gm}}",
+      ""
+    ],
+    "description": "From clipboard (parameters) » generate type",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact"
+  }
+}

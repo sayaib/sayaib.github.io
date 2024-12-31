@@ -1,0 +1,40 @@
+{
+  "Print String": {
+    "prefix": "clogstr",
+    "body": [
+      "console.log('input_statement', 'color: blue', ${1:'your_string'})"
+    ],
+    "description": "Log a string with blue color"
+  },
+  "Print Number": {
+    "prefix": "clognum",
+    "body": [
+      "console.log('input_statement', 'color: green', ${1:your_number})"
+    ],
+    "description": "Log a number with green color"
+  },
+  "Print Object": {
+    "prefix": "clogobj",
+    "body": [
+      "console.log('input_statement', 'color: orange', ${1:your_object})"
+    ],
+    "description": "Log an object with orange color"
+  },
+  "Print Array": {
+    "prefix": "clogarr",
+    "body": [
+      "console.log('input_statement', 'color: purple', ${1:your_array})"
+    ],
+    "description": "Log an array with purple color"
+  },
+  "Print Boolean": {
+    "prefix": "clogbool",
+    "body": ["console.log('input_statement', 'color: red', ${1:your_boolean})"],
+    "description": "Log a boolean with red color"
+  },
+  "Print In Table": {
+    "prefix": "clogtable",
+    "body": ["console.table('data', 'color: red', ${1:your_boolean})"],
+    "description": "Log a boolean with red color"
+  }
+}

@@ -1,0 +1,110 @@
+:root {
+  /* Default Light Mode Variables */
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --header-bg-color: #1c1953;
+  --header-shadow-color: rgba(0, 0, 0, 0.1);
+  --sidebar-bg-color: #f5f7f8;
+  --sidebar-text-color: rgb(24, 24, 24);
+  --body-bg-color: #ffff;
+  --body-text-color: rgb(24, 24, 24);
+}
+
+[data-theme="dark"] {
+  /* Dark Mode Variables */
+  --bg-color: #060b10;
+  --text-color: #ffffff;
+  --header-bg-color: #060b10;
+  --header-shadow-color: rgba(255, 255, 255, 0.1);
+  --sidebar-bg-color: #060b10;
+  --sidebar-text-color: rgb(220, 220, 220);
+  --body-bg-color: #060b10;
+  --body-text-color: rgb(220, 220, 220);
+}
+
+.document {
+  display: flex;
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.header_docs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--header-bg-color);
+  color: var(--text-color);
+  text-align: center;
+  padding: 10px;
+  z-index: 1000;
+  /* height: 50px; */
+
+  border-bottom: 1.55px solid rgb(49, 49, 49);
+  /* box-shadow: 0 4px 6px var(--header-shadow-color); */
+}
+
+.sidebar_doc {
+  padding: 70px 5px;
+  width: 250px;
+  background-color: var(--sidebar-bg-color);
+  color: var(--sidebar-text-color);
+
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 100;
+  transition: transform 0.3s ease;
+}
+
+.body_doc {
+  flex-grow: 1;
+  color: var(--body-text-color);
+  background-color: var(--body-bg-color);
+  padding: 70px 10px;
+  /* margin-top: 50px; */
+  margin-left: 250px;
+  transition: margin-left 0.3s ease;
+}
+
+.hamburger {
+  font-size: 30px;
+  display: none;
+  position: fixed;
+  top: 8px;
+  left: 10px;
+  width: 3rem;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .sidebar_doc {
+    width: 100%;
+    transform: translateX(-100%);
+  }
+
+  .header_docs {
+    height: 4rem;
+  }
+
+  .sidebar_doc.open {
+    transform: translateX(0);
+  }
+  .index_doc {
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+  .body_doc {
+    margin: 0 0 0 0;
+    padding: 0 1rem;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}

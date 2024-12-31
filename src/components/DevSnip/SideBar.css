@@ -1,0 +1,98 @@
+/* Sidebar styles */
+.sidebar {
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(15.5px);
+  -webkit-backdrop-filter: blur(15.5px);
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: width 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.sidebar.open {
+  width: 250px;
+}
+
+.top_section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+}
+
+.logo {
+  margin: 0;
+  font-size: 24px;
+  transition: font-size 0.3s ease-in-out;
+}
+
+.menu_icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.menu_items {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.menu_link {
+  display: flex; /* Align items in a row */
+  align-items: center; /* Vertically center image and text */
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.menu_link img {
+  height: 24px; /* Adjust the size of the image */
+  width: 24px;
+  margin-right: 10px; /* Space between image and text */
+  object-fit: contain; /* Ensure the image maintains aspect ratio */
+  display: inline-block; /* Ensure the image behaves like inline content */
+}
+
+.menu_link:hover {
+  background-color: #34495e;
+}
+
+.menu_link span {
+  margin-left: 10px;
+  font-size: 16px;
+  display: inline-block;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 60px;
+  }
+
+  .sidebar.open {
+    width: 200px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .menu_link span {
+    display: none;
+  }
+
+  .sidebar.open .menu_link span {
+    display: inline-block;
+  }
+}

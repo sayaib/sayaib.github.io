@@ -1,0 +1,177 @@
+{
+  "agg_match": {
+    "prefix": "agg_match",
+    "body": ["{", "  \"$match\": {", "    \"status\": \"A\"", "  }", "}"],
+    "description": "Filters documents to pass only those that match the specified condition."
+  },
+  "agg_group": {
+    "prefix": "agg_group",
+    "body": [
+      "{",
+      "  \"$group\": {",
+      "    \"_id\": \"$cust_id\",",
+      "    \"totalAmount\": { \"$sum\": \"$amount\" },",
+      "    \"count\": { \"$sum\": 1 }",
+      "  }",
+      "}"
+    ],
+    "description": "Groups documents by a specified identifier and performs aggregation operations."
+  },
+  "agg_sort": {
+    "prefix": "agg_sort",
+    "body": ["{", "  \"$sort\": {", "    \"amount\": -1", "  }", "}"],
+    "description": "Sorts the documents in the specified order."
+  },
+  "agg_project": {
+    "prefix": "agg_project",
+    "body": [
+      "{",
+      "  \"$project\": {",
+      "    \"cust_id\": 1,",
+      "    \"totalAmount\": \"$totalAmount\",",
+      "    \"status\": 1",
+      "  }",
+      "}"
+    ],
+    "description": "Reshapes each document in the stream, such as by adding new fields or removing existing fields."
+  },
+  "agg_limit": {
+    "prefix": "agg_limit",
+    "body": ["{", "  \"$limit\": 5", "}"],
+    "description": "Limits the number of documents passed to the next stage in the pipeline."
+  },
+  "agg_skip": {
+    "prefix": "agg_skip",
+    "body": ["{", "  \"$skip\": 10", "}"],
+    "description": "Skips over the specified number of documents."
+  },
+  "agg_unwind": {
+    "prefix": "agg_unwind",
+    "body": ["{", "  \"$unwind\": \"$items\"", "}"],
+    "description": "Deconstructs an array field from the input documents to output a document for each element."
+  },
+  "agg_lookup": {
+    "prefix": "agg_lookup",
+    "body": [
+      "{",
+      "  \"$lookup\": {",
+      "    \"from\": \"products\",",
+      "    \"localField\": \"product_id\",",
+      "    \"foreignField\": \"product_id\",",
+      "    \"as\": \"productDetails\"",
+      "  }",
+      "}"
+    ],
+    "description": "Joins documents from another collection into the pipeline."
+  },
+  "agg_addFields": {
+    "prefix": "agg_addFields",
+    "body": [
+      "{",
+      "  \"$addFields\": {",
+      "    \"total\": { \"$multiply\": [\"$price\", \"$quantity\"] }",
+      "  }",
+      "}"
+    ],
+    "description": "Adds new fields to documents."
+  },
+  "agg_facet": {
+    "prefix": "agg_facet",
+    "body": [
+      "{",
+      "  \"$facet\": {",
+      "    \"byCategory\": [",
+      "      { \"$group\": { \"_id\": \"$category\", \"total\": { \"$sum\": \"$amount\" } } }",
+      "    ],",
+      "    \"byStatus\": [",
+      "      { \"$group\": { \"_id\": \"$status\", \"count\": { \"$sum\": 1 } } }",
+      "    ]",
+      "  }",
+      "}"
+    ],
+    "description": "Processes multiple aggregation pipelines within a single stage on the same set of input documents."
+  },
+  "agg_count": {
+    "prefix": "agg_count",
+    "body": ["{", "  \"$count\": \"totalCount\"", "}"],
+    "description": "Counts the number of documents in the aggregation pipeline."
+  },
+  "agg_sample": {
+    "prefix": "agg_sample",
+    "body": ["{", "  \"$sample\": {", "    \"size\": 5", "  }", "}"],
+    "description": "Randomly selects the specified number of documents from the input."
+  },
+  "agg_merge": {
+    "prefix": "agg_merge",
+    "body": [
+      "{",
+      "  \"$merge\": {",
+      "    \"into\": \"outputCollection\",",
+      "    \"whenMatched\": \"merge\",",
+      "    \"whenNotMatched\": \"insert\"",
+      "  }",
+      "}"
+    ],
+    "description": "Merges the results of the aggregation pipeline into a specified collection."
+  },
+  "agg_replaceRoot": {
+    "prefix": "agg_replaceRoot",
+    "body": [
+      "{",
+      "  \"$replaceRoot\": {",
+      "    \"newRoot\": { \"$sum\": \"$amount\" }",
+      "  }",
+      "}"
+    ],
+    "description": "Replaces the input document with the specified document."
+  },
+  "agg_out": {
+    "prefix": "agg_out",
+    "body": ["{", "  \"$out\": \"outputCollection\"", "}"],
+    "description": "Writes the results of the aggregation pipeline to a specified collection."
+  },
+  "agg_bucket": {
+    "prefix": "agg_bucket",
+    "body": [
+      "{",
+      "  \"$bucket\": {",
+      "    \"groupBy\": \"$age\",",
+      "    \"boundaries\": [0, 18, 25, 35, 45, 55, 65],",
+      "    \"default\": \"Other\",",
+      "    \"output\": {",
+      "      \"count\": { \"$sum\": 1 }",
+      "    }",
+      "  }",
+      "}"
+    ],
+    "description": "Categorizes incoming documents into a specified number of buckets."
+  },
+  "agg_bucketAuto": {
+    "prefix": "agg_bucketAuto",
+    "body": [
+      "{",
+      "  \"$bucketAuto\": {",
+      "    \"groupBy\": \"$age\",",
+      "    \"buckets\": 5,",
+      "    \"output\": {",
+      "      \"count\": { \"$sum\": 1 }",
+      "    }",
+      "  }",
+      "}"
+    ],
+    "description": "Automatically creates buckets based on the specified field."
+  },
+  "agg_geoNear": {
+    "prefix": "agg_geoNear",
+    "body": [
+      "{",
+      "  \"$geoNear\": {",
+      "    \"near\": { \"type\": \"Point\", \"coordinates\": [-73.97, 40.77] },",
+      "    \"distanceField\": \"dist.calculated\",",
+      "    \"spherical\": true",
+      "  }",
+      "}"
+    ],
+    "description": "Returns documents sorted by distance from a specified point."
+  }
+}

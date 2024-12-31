@@ -1,0 +1,132 @@
+/* styles.css */
+:root {
+  --content-background: white;
+  --content-color: black;
+  --content-code-background: #dddddd;
+  --content-code-color: #10272d;
+  --copy-button-color: #000000;
+  --copy-button-background-color: #dddddd;
+}
+
+[data-theme="dark"] {
+  --content-background: rgb(13, 6, 31);
+  --content-color: grey;
+  --content-code-background: #282c34;
+  --content-code-color: #61dafb;
+  --copy-button-color: #13dc6a;
+  --copy-button-background-color: #282c34;
+}
+.containers {
+  margin: 0 auto;
+  padding: 20px;
+  width: 98%; /* Optional: Limit max width for larger screens */
+}
+
+.search-bar {
+  width: 100%;
+  padding: 13px;
+
+  color: var(--content-color);
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+  font-size: 14px; /* Increased font size for better accessibility */
+}
+
+.grid-container {
+  display: grid;
+
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); /* Adjusted min width for smaller screens */
+  gap: 20px; /* Space between grid items */
+}
+
+.template-card {
+  background-color: var(--content-background);
+
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.code-div {
+  height: 30rem;
+  display: flex;
+
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.code-div p {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.template-card h2 {
+  font-size: 1.1em;
+  color: var(--content-color); /* Responsive font size */
+}
+
+.template-card p {
+  font-size: small;
+  margin: 5px 0;
+  color: var(--content-color);
+}
+
+.code-block {
+  display: flex; /* Enable Flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  background-color: var(--content-code-background);
+  color: var(--content-code-color);
+  padding: 1rem;
+  font-size: 0.9rem;
+  height: 25rem;
+  border-radius: 4px;
+  overflow-x: auto; /* Allow horizontal scrolling for long lines */
+  white-space: pre-wrap; /* Preserve whitespace and line breaks */
+  font-family: "Courier New", Courier, monospace;
+}
+
+.copy-button {
+  position: absolute;
+  top: 1px;
+  right: 20px;
+  padding: 0 !important;
+  color: var(--copy-button-color);
+  border: none;
+  background-color: var(--copy-button-background-color);
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 10px;
+}
+.code-block-container {
+  position: relative;
+}
+
+.copy-button:hover {
+  background-color: transparent;
+}
+/* Media Queries for Additional Responsiveness */
+@media (max-width: 768px) {
+  .template-card h2 {
+    font-size: 1.2em; /* Smaller heading on mobile devices */
+  }
+
+  .search-bar {
+    font-size: 14px; /* Smaller font size on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .template-card {
+    padding: 10px; /* Reduce padding on smaller devices */
+  }
+
+  .code-block {
+    padding: 0.5rem; /* Less padding for code blocks on small screens */
+  }
+}
