@@ -4,6 +4,8 @@ import NavHub from "../../components/index/NavHub";
 import logo from "../../assets/snippets/logo.png";
 import TitleDoc from "../../components/index/TitleDoc";
 
+import { Link } from "react-router-dom";
+
 const WhatIsDevSnip = () => {
   return (
     <>
@@ -133,7 +135,7 @@ const WhatIsDevSnip = () => {
               </ul>
             </p>
 
-            <h2 className="header_doc" id="target_audience">
+            <h2 className="header_doc" id="/target_audience">
               2. Target Audience
             </h2>
             <p>
@@ -157,10 +159,10 @@ const WhatIsDevSnip = () => {
           <NavHub />
           <ul>
             <li>
-              <a href="#features">1. Features</a>
+              <Link to="#features">1. Features</Link>
             </li>
             <li>
-              <a href="#target_audience">2. Target Audience</a>
+              <Link to="#target_audience">2. Target Audience</Link>
             </li>
           </ul>
         </div>
