@@ -3,6 +3,7 @@ import "./style.css";
 import NavHub from "../../components/index/NavHub";
 import TitleDoc from "../../components/index/TitleDoc";
 import { scrollToId } from "../../function/function";
+import Tag from "../../components/index/Tag";
 
 const WhyDevSnip = () => {
   return (
@@ -281,44 +282,46 @@ const WhyDevSnip = () => {
           <NavHub />
           <ul>
             <li>
-              <a onClick={() => scrollToId("time")}>
-                1. Save Time and Boost Productivity
-              </a>
+              <Tag tag="time" name="1. Save Time and Boost Productivity" />
             </li>
             <li>
-              <a onClick={() => scrollToId("errors")}>
-                2. Reduce Errors and Improve Code Quality
-              </a>
+              <Tag
+                tag="errors"
+                name="2. Reduce Errors and Improve Code Quality"
+              />
             </li>
             <li>
-              <a onClick={() => scrollToId("reuse")}>
-                3. Easy Code Reusability
-              </a>
+              <Tag tag="reuse" name="3. Easy Code Reusability" />
             </li>
             <li>
-              <a onClick={() => scrollToId("onboarding")}>
-                4. Simplify Onboarding and Collaboration
-              </a>
+              <Tag
+                tag="onboarding"
+                name="4.Simplify Onboarding and Collaboration"
+              />
             </li>
             <li>
-              <a onClick={() => scrollToId("learning")}>
-                5. Better Learning and Reference Tool
-              </a>
+              <Tag
+                tag="learning"
+                name="56. Better Learning and Reference Tool"
+              />
             </li>
             <li>
-              <a onClick={() => scrollToId("customization")}>
-                6. Customization and Personalization
-              </a>
+              <Tag
+                tag="customization"
+                name="6. Customization and Personalization"
+              />
             </li>
             <li>
-              <a onClick={() => scrollToId("multi-language")}>
-                7. Multi-Language Support for Diverse Projects
-              </a>
+              <Tag
+                tag="multi-language"
+                name="7. Multi-Language Support for Diverse Projects"
+              />
             </li>
             <li>
-              <a onClick={() => scrollToId("focus")}>
-                8. Increased Focus on Problem Solving, Not Syntax
-              </a>
+              <Tag
+                tag="focus"
+                name="8. Increased Focus on Problem Solving, Not Syntax"
+              />
             </li>
           </ul>
         </div>

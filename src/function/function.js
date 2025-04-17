@@ -8,7 +8,16 @@ const snippetsLinkName = (str) => {
 const scrollToId = (id) => {
   const element = document.getElementById(id);
   if (element) {
-    element.scrollIntoView({ behavior: "smooth" });
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    // Apply highlight class
+    element.classList.add("highlighted");
+
+    // Remove it after 1.5 seconds
+    setTimeout(() => {
+      element.classList.remove("highlighted");
+    }, 1500);
   }
 };
+
 module.exports = { snippetsLinkName, scrollToId };

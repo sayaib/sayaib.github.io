@@ -7,6 +7,7 @@ import TitleDoc from "../../components/index/TitleDoc";
 
 import { Link } from "react-router-dom";
 import { scrollToId } from "../../function/function";
+import Tag from "../../components/index/Tag";
 
 const WhatIsDevSnip = () => {
   return (
@@ -161,12 +162,10 @@ const WhatIsDevSnip = () => {
           <NavHub />
           <ul>
             <li>
-              <a onClick={() => scrollToId("features")}>1. Features</a>
+              <Tag tag="features" name="1. Features" />
             </li>
             <li>
-              <a onClick={() => scrollToId("target_audience")}>
-                2. Target Audience
-              </a>
+              <Tag tag="target_audience" name="2. Target Audience" />
             </li>
           </ul>
         </div>

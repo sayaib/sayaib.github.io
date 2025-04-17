@@ -7,6 +7,7 @@ import imageOneLight from "../../assets/code_example/cli_install/3_light.png";
 import imageTwo from "../../assets/code_example/cli_install/3_1_dark.png";
 import imageTwoLight from "../../assets/code_example/cli_install/3_1_light.png";
 import { useTheme } from "../../context/ThemeContext";
+import Tag from "../../components/index/Tag";
 
 const PrismSnippetsLoggerInstallation = () => {
   const { theme, toggleTheme } = useTheme();
@@ -180,19 +181,22 @@ const PrismSnippetsLoggerInstallation = () => {
         <NavHub />
         <ul>
           <li>
-            <a href="#Overview">1. Overview</a>
+            <Tag tag="Overview" name="1. Overview" />
           </li>
           <li>
-            <a href="#Prerequisites">2. Prerequisites</a>
+            <Tag tag="Prerequisites" name="2. Prerequisites" />
           </li>
           <li>
-            <a href="#Installation-Steps">3. Installation Steps</a>
+            <Tag tag="Installation-Steps" name="3. Installation Steps" />
           </li>
           <li>
-            <a href="#Troubleshooting">4. Troubleshooting</a>
+            <Tag tag="Troubleshooting" name="4. Troubleshooting" />
           </li>
           <li>
-            <a href="# Additional-Information">5. Additional Information</a>
+            <Tag
+              tag="Additional-Information"
+              name="5. Additional Information"
+            />
           </li>
         </ul>
       </div>

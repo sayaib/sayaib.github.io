@@ -411,3 +411,7 @@
 a {
   cursor: pointer;
 }
+
+.highlighted {
+  color: rgb(243, 162, 0);
+}

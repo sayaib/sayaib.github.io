@@ -3,6 +3,7 @@ import "./style.css";
 import installation from "../../assets/snippets/doc_gif/installation.gif";
 import NavHub from "../../components/index/NavHub";
 import TitleDoc from "../../components/index/TitleDoc";
+import Tag from "../../components/index/Tag";
 
 const Installation = () => {
   return (
@@ -143,18 +144,19 @@ const Installation = () => {
           <NavHub />
           <ul>
             <li>
-              <a href="#prerequisites">1. Prerequisites</a>
+              <Tag tag="prerequisites" name="1. Prerequisites" />
             </li>
             <li>
-              <a href="#step_install">2. Steps to Install</a>
+              <Tag tag="step_install" name="2. Steps to Install" />
             </li>
             <li>
-              <a href="#troubleshooting">
-                3. Troubleshooting Installation Issues
-              </a>
+              <Tag
+                tag="troubleshooting"
+                name="3. Troubleshooting Installation Issues"
+              />
             </li>
             <li>
-              <a href="#conclusion">4. Conclusion</a>
+              <Tag tag="conclusion" name="4. Conclusion" />
             </li>
           </ul>
         </div>

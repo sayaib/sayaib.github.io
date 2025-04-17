@@ -5,6 +5,7 @@ import customsnippets from "../../assets/snippets/doc_gif/customsnip.gif";
 import "./style.css";
 import NavHub from "../../components/index/NavHub";
 import TitleDoc from "../../components/index/TitleDoc";
+import Tag from "../../components/index/Tag";
 
 const CustomSnippets = () => {
   return (
@@ -124,19 +125,22 @@ const CustomSnippets = () => {
         <NavHub />
         <ul>
           <li>
-            <a href="#install-devsnip-pro">Step 1: Install DevSnip Pro</a>
+            <Tag tag="install-devsnip-pro" name="Step 1: Install DevSnip Pro" />
           </li>
           <li>
-            <a href="#create-custom-snippets">Step 2: Create Custom Snippets</a>
+            <Tag
+              tag="create-custom-snippets"
+              name="Step 2: Create Custom Snippets"
+            />
           </li>
           <li>
-            <a href="#use-example">
-              {" "}
-              Step 3: Use Custom Snippets in Your Javascript or Typescript Page
-            </a>
+            <Tag
+              tag="use-example"
+              name=" Step 3: Use Custom Snippets in Your Javascript or Typescript Page"
+            />
           </li>
           <li>
-            <a href="#conclusion">4. Conclusion</a>
+            <Tag tag="conclusion" name="4. Conclusion" />
           </li>
         </ul>
       </div>
