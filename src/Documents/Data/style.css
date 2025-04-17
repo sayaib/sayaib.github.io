@@ -104,12 +104,12 @@
 
 .installation_image {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 .downloads_image {
-  width: auto;
+  width: 50%;
   padding: 0.8rem;
-  margin: 0.5rem;
+  margin: 0.5rem auto;
 }
 .rating_image {
   width: auto;
