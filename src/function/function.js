@@ -5,4 +5,10 @@ const snippetsLinkName = (str) => {
     .join(" "); // Join words with a space
 };
 
-module.exports = { snippetsLinkName };
+const scrollToId = (id) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+};
+module.exports = { snippetsLinkName, scrollToId };

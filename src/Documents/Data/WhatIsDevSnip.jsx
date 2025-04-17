@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import "./style.css";
 import NavHub from "../../components/index/NavHub";
@@ -5,6 +6,7 @@ import logo from "../../assets/snippets/logo.png";
 import TitleDoc from "../../components/index/TitleDoc";
 
 import { Link } from "react-router-dom";
+import { scrollToId } from "../../function/function";
 
 const WhatIsDevSnip = () => {
   return (
@@ -135,7 +137,7 @@ const WhatIsDevSnip = () => {
               </ul>
             </p>
 
-            <h2 className="header_doc" id="/target_audience">
+            <h2 className="header_doc" id="target_audience">
               2. Target Audience
             </h2>
             <p>
@@ -159,10 +161,12 @@ const WhatIsDevSnip = () => {
           <NavHub />
           <ul>
             <li>
-              <Link to="#features">1. Features</Link>
+              <a onClick={() => scrollToId("features")}>1. Features</a>
             </li>
             <li>
-              <Link to="#target_audience">2. Target Audience</Link>
+              <a onClick={() => scrollToId("target_audience")}>
+                2. Target Audience
+              </a>
             </li>
           </ul>
         </div>

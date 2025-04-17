@@ -2,6 +2,7 @@ import React from "react";
 import "./style.css";
 import NavHub from "../../components/index/NavHub";
 import TitleDoc from "../../components/index/TitleDoc";
+import { scrollToId } from "../../function/function";
 
 const WhyDevSnip = () => {
   return (
@@ -280,30 +281,42 @@ const WhyDevSnip = () => {
           <NavHub />
           <ul>
             <li>
-              <a href="#time">1. Save Time and Boost Productivity</a>
+              <a onClick={() => scrollToId("time")}>
+                1. Save Time and Boost Productivity
+              </a>
             </li>
             <li>
-              <a href="#errors">2. Reduce Errors and Improve Code Quality</a>
+              <a onClick={() => scrollToId("errors")}>
+                2. Reduce Errors and Improve Code Quality
+              </a>
             </li>
             <li>
-              <a href="#reuse">3. Easy Code Reusability</a>
+              <a onClick={() => scrollToId("reuse")}>
+                3. Easy Code Reusability
+              </a>
             </li>
             <li>
-              <a href="#onboarding">4. Simplify Onboarding and Collaboration</a>
+              <a onClick={() => scrollToId("onboarding")}>
+                4. Simplify Onboarding and Collaboration
+              </a>
             </li>
             <li>
-              <a href="#learning">5. Better Learning and Reference Tool</a>
+              <a onClick={() => scrollToId("learning")}>
+                5. Better Learning and Reference Tool
+              </a>
             </li>
             <li>
-              <a href="#customization">6. Customization and Personalization</a>
+              <a onClick={() => scrollToId("customization")}>
+                6. Customization and Personalization
+              </a>
             </li>
             <li>
-              <a href="#multi-language">
+              <a onClick={() => scrollToId("multi-language")}>
                 7. Multi-Language Support for Diverse Projects
               </a>
             </li>
             <li>
-              <a href="#focus">
+              <a onClick={() => scrollToId("focus")}>
                 8. Increased Focus on Problem Solving, Not Syntax
               </a>
             </li>
