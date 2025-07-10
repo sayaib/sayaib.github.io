@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./styles.css";
 import { Clipboard } from "lucide-react";
 import toast, { Toaster } from "react-hot-toast";
+import Editor from "@monaco-editor/react";
 
 const SnippetsDataTable = ({ snippets }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -26,6 +27,7 @@ const SnippetsDataTable = ({ snippets }) => {
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
+
       <div className="grid-container">
         {filteredTemplates.length > 0 ? (
           filteredTemplates.map(([title, content]) => (
@@ -40,6 +42,7 @@ const SnippetsDataTable = ({ snippets }) => {
                   <strong>Description:</strong> {content.description}
                 </p>
                 <div className="code-block-container">
+                  {/* <Editor defaultLanguage="javascript" defaultValue="" /> */}
                   <pre className="code-block">
                     {Array.isArray(content.body)
                       ? content.body.join(" ")
