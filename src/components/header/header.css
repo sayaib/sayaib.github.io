@@ -1,23 +1,80 @@
 header {
-  height: 100%;
+  height: 100vh;
   padding-top: 7rem;
   overflow: hidden;
+  background: linear-gradient(135deg, 
+    rgba(31, 31, 56, 0.95) 0%, 
+    rgba(62, 62, 127, 0.8) 50%,
+    rgba(31, 31, 56, 0.95) 100%);
+  position: relative;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 20%, 
+    rgba(0, 245, 255, 0.1) 0%, 
+    rgba(124, 58, 237, 0.05) 50%, 
+    transparent 100%);
+  z-index: -1;
 }
 
 .header__container {
   text-align: center;
   height: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInUp 1s ease-out;
 }
+
+.header__container h5:first-child {
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  animation: slideInLeft 1s ease-out 0.2s both;
+}
+
+.header__container h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 30px rgba(0, 245, 255, 0.3));
+  animation: slideInRight 1s ease-out 0.4s both;
+}
+
+.header__container .text-light {
+  font-size: 1.4rem;
+  color: var(--color-light);
+  margin-bottom: 3rem;
+  font-weight: 300;
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
 .devsnip {
   background-color: #48fff1 !important;
   border: black !important;
 }
+
 .cta {
   display: flex;
   justify-content: center;
-  gap: 1.2rem;
+  gap: 1.5rem;
   margin-top: 2.5rem;
+  animation: slideInUp 1s ease-out 0.8s both;
 }
 
 .header__socials {
@@ -47,11 +104,76 @@ header {
 }
 .scroll__down img {
   width: 40px;
+  transition: all 0.3s ease;
 }
 
+.scroll__down:hover img {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
 @media screen and (max-width: 1024px) {
   header {
-    height: 48vh;
+    height: 90vh;
+    padding-top: 5rem;
+  }
+
+  .header__container h1 {
+    font-size: 3.2rem;
+  }
+
+  .header__container h5:first-child {
+    font-size: 1.1rem;
+  }
+
+  .header__container .text-light {
+    font-size: 1.2rem;
   }
 
   section {
@@ -59,13 +181,86 @@ header {
   }
 }
 
+@media screen and (max-width: 768px) {
+  header {
+    height: 85vh;
+    padding-top: 4rem;
+  }
+
+  .header__container h1 {
+    font-size: 2.8rem;
+  }
+
+  .header__container h5:first-child {
+    font-size: 1rem;
+  }
+
+  .header__container .text-light {
+    font-size: 1.1rem;
+  }
+
+  .cta {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
 @media screen and (max-width: 600px) {
   header {
-    height: 55vh;
+    height: 80vh;
+    padding-top: 3rem;
+  }
+
+  .header__container h1 {
+    font-size: 2.2rem;
+  }
+
+  .header__container h5:first-child {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+
+  .header__container .text-light {
+    font-size: 1rem;
+    margin-bottom: 2rem;
   }
 
   .header__socials,
   .scroll__down {
     display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header {
+    height: 75vh;
+  }
+
+  .header__container h1 {
+    font-size: 1.8rem;
+  }
+
+  .header__container h5:first-child {
+    font-size: 0.8rem;
+  }
+
+  .header__container .text-light {
+    font-size: 0.9rem;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .header__container,
+  .header__container h5:first-child,
+  .header__container h1,
+  .header__container .text-light,
+  .cta {
+    animation: none;
+  }
+
+  .scroll__down:hover img {
+    transform: none;
   }
 }

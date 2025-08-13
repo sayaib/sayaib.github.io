@@ -68,7 +68,7 @@ import "./topbar.css";
 
 const Topbar = () => {
   return (
-    <nav>
+    <nav className="nav-bootom">
       <a
         href="https://codepen.io/sayaib"
         target="_blank"
