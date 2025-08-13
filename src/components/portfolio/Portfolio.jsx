@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FaGithub, FaExternalLinkAlt, FaEye, FaStar, FaCode } from 'react-icons/fa'
+import { FaGithub, FaExternalLinkAlt, FaStar, FaCode } from 'react-icons/fa'
 import { BiCodeAlt } from 'react-icons/bi'
 import { MdWeb, Md10K } from 'react-icons/md'
 import IMG1 from "../../assets/Educational Website.jpg";
@@ -111,12 +111,11 @@ const Portfolio = () => {
     <section id="portfolio" className="portfolio-section">
       <div className="container">
         <div className="section-header">
-          <h5 className="section-subtitle">My Recent Work</h5>
-          <h2 className="section-title">Portfolio</h2>
-          <div className="title-underline"></div>
+          <span className="section-subtitle">My Recent Work</span>
+          <h2 className="section-title">Selected Projects</h2>
           <p className="section-description">
-            Explore my collection of projects showcasing modern web development, 
-            full-stack applications, and innovative solutions.
+            A curated collection of projects showcasing modern web development, 
+            innovative solutions, and attention to detail.
           </p>
         </div>
 
@@ -128,91 +127,75 @@ const Portfolio = () => {
               className={`filter-btn ${filter === category.id ? 'active' : ''}`}
               onClick={() => setFilter(category.id)}
             >
-              {category.icon}
-              <span>{category.label}</span>
+              <span className="filter-icon">{category.icon}</span>
+              <span className="filter-label">{category.label}</span>
               <span className="project-count">
-                ({category.id === 'all' ? soloProjects.length : soloProjects.filter(p => p.category === category.id).length})
+                {category.id === 'all' ? soloProjects.length : soloProjects.filter(p => p.category === category.id).length}
               </span>
             </button>
           ))}
         </div>
 
-        {/* Portfolio Stats */}
-        <div className="portfolio-stats">
-          <div className="stat-item">
-            <FaCode className="stat-icon" />
-            <span className="stat-number">{soloProjects.length}</span>
-            <span className="stat-label">Total Projects</span>
-          </div>
-          <div className="stat-item">
-            <FaStar className="stat-icon" />
-            <span className="stat-number">{soloProjects.filter(p => p.featured).length}</span>
-            <span className="stat-label">Featured</span>
-          </div>
-          <div className="stat-item">
-            <FaEye className="stat-icon" />
-            <span className="stat-number">{soloProjects.filter(p => p.status === 'completed').length}</span>
-            <span className="stat-label">Completed</span>
-          </div>
-        </div>
-
-        <div className="portfolio__container">
+        <div className="portfolio-grid">
           {filteredProjects.map((pro) => (
             <article 
-              className={`portfolio__item ${pro.featured ? 'featured' : ''} ${pro.status}`} 
+              className={`project-card ${pro.featured ? 'featured' : ''}`} 
               key={pro.id}
               onMouseEnter={() => setHoveredProject(pro.id)}
               onMouseLeave={() => setHoveredProject(null)}
             >
-              {pro.featured && (
-                <div className="featured-badge">
-                  <FaStar /> Featured
-                </div>
-              )}
-              
-              <div className="portfolio__item-image">
-                <img src={pro.img} alt={pro.title} />
-                <div className="image-overlay">
-                  <div className="overlay-content">
-                    <span className="project-category">{pro.category}</span>
-                    <span className={`project-status ${pro.status}`}>
-                      {pro.status === 'completed' ? '✓ Completed' : '🚧 In Progress'}
-                    </span>
+              <div className="project-image">
+                <img src={pro.img} alt={pro.title} loading="lazy" />
+                <div className="project-overlay">
+                  <div className="project-actions">
+                    <a
+                      href={pro.github}
+                      className="action-btn"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="View GitHub Repository"
+                    >
+                      <FaGithub />
+                    </a>
+                    <a
+                      href={pro.link}
+                      className="action-btn primary"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="View Live Demo"
+                    >
+                      <FaExternalLinkAlt />
+                    </a>
                   </div>
+                  {pro.featured && (
+                    <div className="featured-badge">
+                      <FaStar />
+                    </div>
+                  )}
                 </div>
               </div>
               
-              <div className="portfolio__item-content">
-                <h3>{pro.title}</h3>
-                <p>{pro.description}</p>
+              <div className="project-content">
+                <div className="project-header">
+                  <h3 className="project-title">{pro.title}</h3>
+                  <span className={`project-status ${pro.status}`}>
+                    {pro.status === 'completed' ? 'Completed' : 'In Progress'}
+                  </span>
+                </div>
                 
-                <div className="portfolio__technologies">
-                  {pro.technologies.map((tech, index) => (
+                <p className="project-description">{pro.description}</p>
+                
+                <div className="project-technologies">
+                  {pro.technologies.slice(0, 4).map((tech, index) => (
                     <span key={index} className="tech-tag">
                       {tech}
                     </span>
                   ))}
-                </div>
-                
-                <div className="portfolio__item-cta">
-                  <a
-                    href={pro.github}
-                    className="btn btn-outline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaGithub className="btn-icon" />
-                    GitHub
-                  </a>
-                  <a
-                    href={pro.link}
-                    className="btn btn-primary"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaExternalLinkAlt className="btn-icon" />
-                    Live Demo
-                  </a>
+                  {pro.technologies.length > 4 && (
+                    <span className="tech-tag more">
+                      +{pro.technologies.length - 4}
+                    </span>
+                  )}
                 </div>
               </div>
             </article>
@@ -220,10 +203,14 @@ const Portfolio = () => {
         </div>
 
         {filteredProjects.length === 0 && (
-          <div className="no-projects">
-            <FaCode className="no-projects-icon" />
-            <h3>No projects found</h3>
-            <p>Try selecting a different category to see more projects.</p>
+          <div className="empty-state">
+            <div className="empty-icon">
+              <FaCode />
+            </div>
+            <h3 className="empty-title">No projects found</h3>
+            <p className="empty-description">
+              Try selecting a different category to explore more projects.
+            </p>
           </div>
         )}
       </div>

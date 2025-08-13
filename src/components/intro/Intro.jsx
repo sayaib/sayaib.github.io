@@ -1,119 +1,136 @@
-import "./intro.css";
-
-import { FaAward, FaCode, FaMobile, FaRocket } from "react-icons/fa";
 import React from "react";
-import { VscFolderLibrary } from "react-icons/vsc";
+import "./intro.css";
+import { FaAward, FaUsers, FaFolderOpen } from "react-icons/fa";
+import { SiReact, SiMongodb, SiFlutter } from "react-icons/si";
 import { BiCodeAlt } from "react-icons/bi";
 import { MdWeb } from "react-icons/md";
-import img from "../../assets/me.jpg";
+import { BsArrowRight } from "react-icons/bs";
+import { HiDownload } from "react-icons/hi";
+import ME from "../../assets/me.jpeg";
+import CV from "../../assets/sayaib.pdf";
 
 const Intro = () => {
   const achievements = [
     {
-      icon: <FaAward className="about__icon" />,
-      title: "Experience",
-      subtitle: "3+ Years",
-      description: "Professional Development"
+      icon: <FaAward />,
+      number: "3+",
+      label: "Years Experience",
     },
     {
-      icon: <VscFolderLibrary className="about__icon" />,
-      title: "Projects",
-      subtitle: "10+ Completed",
-      description: "Successful Deliveries"
+      icon: <FaFolderOpen />,
+      number: "15+",
+      label: "Projects Completed",
     },
     {
-      icon: <FaCode className="about__icon" />,
-      title: "Technologies",
-      subtitle: "15+ Mastered",
-      description: "Modern Tech Stack"
+      icon: <BiCodeAlt />,
+      number: "10+",
+      label: "Technologies",
     },
     {
-      icon: <FaRocket className="about__icon" />,
-      title: "Performance",
-      subtitle: "99% Uptime",
-      description: "Reliable Solutions"
-    }
+      icon: <FaUsers />,
+      number: "99%",
+      label: "Client Satisfaction",
+    },
   ];
 
   const skills = [
-    { name: "Full-Stack Development", icon: <MdWeb /> },
-    { name: "Mobile App Development", icon: <FaMobile /> },
-    { name: "API Integration", icon: <BiCodeAlt /> },
-    { name: "Database Management", icon: <FaCode /> }
+    {
+      icon: <SiReact />,
+      title: "Full-Stack",
+      description: "React, Node.js, MongoDB",
+    },
+    {
+      icon: <SiFlutter />,
+      title: "Mobile App",
+      description: "Flutter, React Native",
+    },
+    {
+      icon: <MdWeb />,
+      title: "API Integration",
+      description: "RESTful, GraphQL APIs",
+    },
+    {
+      icon: <SiMongodb />,
+      title: "Database Management",
+      description: "SQL, NoSQL, Cloud DB",
+    },
   ];
 
   return (
-    <section id="about" className="about-section">
-      <div className="section-header">
-        <h5 className="section-subtitle">Get to know</h5>
-        <h2 className="section-title">About Me</h2>
-        <div className="title-underline"></div>
-      </div>
-      
+    <section id='about' className='about-section'>
       <div className="container about__container">
-        <div className="about__me">
-          <div className="about__me-image">
-            <img src={img} alt="Sayaib Sarkar" />
-            <div className="image-overlay">
-              <div className="overlay-content">
-                <h4>Sayaib Sarkar</h4>
-                <p>Full-Stack Developer</p>
-              </div>
-            </div>
-          </div>
-          <div className="about__skills-preview">
-            {skills.map((skill, index) => (
-              <div key={index} className="skill-badge">
-                {skill.icon}
-                <span>{skill.name}</span>
-              </div>
-            ))}
-          </div>
+        <div className="section-header">
+          <span className="section-subtitle">Get To Know</span>
+          <h2 className="section-title">About Me</h2>
+          <p className="section-description">
+            Passionate full-stack developer crafting exceptional digital experiences 
+            through innovative solutions and clean, efficient code.
+          </p>
         </div>
         
-        <div className="about__content">
-          <div className="about__cards">
-            {achievements.map((achievement, index) => (
-              <article key={index} className="about__card">
-                <div className="card-icon">
-                  {achievement.icon}
+        <div className="about-content">
+          <div className="about-visual">
+            <div className="about-image">
+              <img src={ME} alt="About me" />
+              <div className="image-overlay"></div>
+            </div>
+            
+            <div className="achievements-grid">
+              {achievements.map((achievement, index) => (
+                <div key={index} className="achievement-card">
+                  <div className="achievement-icon">
+                    {achievement.icon}
+                  </div>
+                  <div className="achievement-content">
+                     <span className="achievement-number">{achievement.number}</span>
+                     <span className="achievement-label">{achievement.label}</span>
+                   </div>
                 </div>
-                <div className="card-content">
-                  <h5>{achievement.title}</h5>
-                  <span className="card-number">{achievement.subtitle}</span>
-                  <small>{achievement.description}</small>
-                </div>
-              </article>
-            ))}
+              ))}
+            </div>
           </div>
           
-          <div className="about__description">
-            <p className="intro-text">
-              I am a <span className="highlight">passionate MERN Stack and Flutter Developer</span> with 3+ years of
-              experience in building dynamic web and mobile applications.
-            </p>
-            <p>
-              My expertise lies in crafting <span className="highlight">scalable web solutions</span> using
-              MongoDB, Express.js, React.js, and Node.js, alongside creating
-              cross-platform mobile apps with Flutter. I specialize in developing
-              intuitive user interfaces, integrating APIs, and managing both SQL
-              and NoSQL databases.
-            </p>
-            <p>
-              With a strong focus on <span className="highlight">performance and user experience</span>, I thrive on solving complex challenges through
-              innovative solutions. My goal is to deliver high-quality
-              applications that drive impact and exceed expectations.
-            </p>
-          </div>
-          
-          <div className="about__cta">
-            <a href="#contact" className="btn btn-primary">
-              <span>Let's Collaborate</span>
-              <FaRocket className="btn-icon" />
-            </a>
-            <a href="#portfolio" className="btn btn-outline">
-              View My Work
-            </a>
+          <div className="about-text">
+            <div className="about-intro">
+              <h3 className="intro-title">Full Stack Developer & Creative Problem Solver</h3>
+              <p className="intro-description">
+                I'm a passionate full-stack developer with a keen eye for design and a love for creating 
+                seamless digital experiences. With expertise spanning both frontend and backend technologies, 
+                I bring ideas to life through clean, efficient code and intuitive user interfaces.
+              </p>
+              <p className="intro-description">
+                My approach combines technical excellence with creative thinking, ensuring every project 
+                not only functions flawlessly but also delivers an exceptional user experience.
+              </p>
+            </div>
+            
+            <div className="skills-section">
+              <h4 className="skills-title">Core Expertise</h4>
+              <div className="skills-grid">
+                {skills.map((skill, index) => (
+                  <div key={index} className="skill-card">
+                    <div className="skill-icon">
+                      {skill.icon}
+                    </div>
+                    <div className="skill-content">
+                       <h5 className="skill-title">{skill.title}</h5>
+                       <p className="skill-description">{skill.description}</p>
+                     </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="about-cta">
+               <a href="#contact" className="btn btn-primary">
+                 <BsArrowRight className="btn-icon" />
+                 Let's Work Together
+               </a>
+               <a href={CV} download className="btn btn-outline">
+                 <HiDownload className="btn-icon" />
+                 Download CV
+               </a>
+             </div>
           </div>
         </div>
       </div>
