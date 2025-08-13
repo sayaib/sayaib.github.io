@@ -196,13 +196,13 @@ const Main = () => {
           ))}
         </div>
         <div className="loading-content">
-          <div className="loading-logo">
+          {/* <div className="loading-logo">
             <div className="logo-ring">
               <div className="logo-inner">
                 <span className="logo-text">SB</span>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="loading-spinner">
             <div className="spinner-ring"></div>
             <div className="spinner-ring"></div>
@@ -246,57 +246,7 @@ const Main = () => {
         <div className={`scroll-percentage ${isScrolling ? 'scrolling' : ''}`}>{Math.round(scrollProgress)}%</div>
       </div>
 
-      {/* Left Side Floating Navigation */}
-      <nav className={`left-floating-nav ${isScrolling ? 'scrolling' : ''}`}>
-        <div className="nav-container">
-          {/* <div className="nav-header">
-            <div className="nav-logo">
-              <span className="logo-icon">SB</span>
-            </div>
-            <div className="nav-title">Portfolio</div>
-          </div>
-           */}
-          <div className="nav-menu">
-            {[
-              { id: 'home', label: 'Home', icon: '🏠', color: 'primary' },
-              { id: 'about', label: 'About', icon: '👨‍💻', color: 'secondary' },
-              { id: 'experience', label: 'Skills', icon: '⚡', color: 'accent' },
-              { id: 'portfolio', label: 'Projects', icon: '🚀', color: 'tertiary' },
-              { id: 'testimonials', label: 'Reviews', icon: '💬', color: 'quaternary' },
-              { id: 'contact', label: 'Contact', icon: '📧', color: 'info' }
-            ].map(({ id, label, icon, color }) => (
-              <button
-                key={id}
-                className={`nav-item ${visibleSections.has(id) ? 'active' : ''} nav-${color}`}
-                onClick={() => scrollToSection(id)}
-                aria-label={`Navigate to ${label}`}
-                title={label}
-              >
-                <div className="nav-item-content">
-                  <span className="nav-icon">{icon}</span>
-                
-                </div>
-                <div className="nav-ripple"></div>
-              </button>
-            ))}
-          </div>
-          
-          {/* <div className="nav-footer">
-            <div className="nav-social">
-              <a href="#" className="social-link" aria-label="GitHub">
-                <span>⚡</span>
-              </a>
-              <a href="#" className="social-link" aria-label="LinkedIn">
-                <span>💼</span>
-              </a>
-              <a href="#" className="social-link" aria-label="Twitter">
-                <span>🐦</span>
-              </a>
-            </div>
-          </div> */}
-        </div>
-        <div className="nav-background"></div>
-      </nav>
+
       
 
 
